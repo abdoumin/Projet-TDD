@@ -37,11 +37,17 @@ class OpenFoodFactsClient:
                 headers=self.headers
             )
             response.raise_for_status()
-            return response.json().get('products', [])
+            products = response.json().get('products', [])
+            
+            # Add additives count to each product
+            for product in products:
+                additives_tags = product.get('additives_tags', [])
+                product['additives_count'] = len(additives_tags)
+            
+            return products
         except requests.exceptions.RequestException as e:
             print(f"Error fetching page {page} for nutriscore {nutriscore}: {e}")
             return []
-
     def _has_valid_images(self, product):
         """Check if product has at least one valid image"""
         image_fields = ['image_url', 'image_small_url', 'image_front_url', 'image_front_small_url']
@@ -102,10 +108,7 @@ class OpenFoodFactsClient:
                 time.sleep(1)  # Be nice to the API
             page += 1
 
-        return {
-            'first_150': first_150,
-            'remaining_150': remaining_150
-        }
+        return first_150 + remaining_150
 
     def save_products(self, products, filename="pasta_products.json"):
         """Save collected products to a JSON file"""
@@ -139,14 +142,13 @@ def main():
     print("Starting to collect pasta products...")
     
     products = client.collect_all_products()
+    client.save_products(products)
     
-    if len(products['first_150']) == 150 and len(products['remaining_150']) == 150:
-        client.save_products(products)
-        client.print_statistics(products)
-    else:
-        print("\nFailed to collect required number of products:")
-        print(f"First 150: {len(products['first_150'])} collected")
-        print(f"Remaining 150: {len(products['remaining_150'])} collected")
+    # if len(products['first_150']) == 150 and len(products['remaining_150']) == 150:
+    # else:
+    #     print("\nFailed to collect required number of products:")
+    #     print(f"First 150: {len(products['first_150'])} collected")
+    #     print(f"Remaining 150: {len(products['remaining_150'])} collected")
 
 if __name__ == "__main__":
     main()
