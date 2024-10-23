@@ -17,7 +17,7 @@ class OpenFoodFactsClient:
         self.required_fields = (
             "code,product_name,brands,nutriscore_grade,ecoscore_grade,"
             "categories_tags_en,ingredients_text,nutriments,additives_tags,"
-            "image_url,image_small_url,image_front_url,image_front_small_url"
+            "image_url,image_small_url,image_front_url,image_front_small_url,labels"
         )
         
     def _fetch_page(self, nutriscore, page=1):
@@ -39,10 +39,15 @@ class OpenFoodFactsClient:
             response.raise_for_status()
             products = response.json().get('products', [])
             
-            # Add additives count to each product
+            # Add additives count and check for Bio label
             for product in products:
+                # Count additives
                 additives_tags = product.get('additives_tags', [])
                 product['additives_count'] = len(additives_tags)
+                
+                # Check for Bio in labels
+                labels = product.get('labels', '').split(',')
+                product['is_bio'] = 'Bio' in labels
             
             return products
         except requests.exceptions.RequestException as e:
@@ -80,14 +85,23 @@ class OpenFoodFactsClient:
 
     def collect_all_products(self):
         """Collect all required products according to specifications"""
-        # First 150 products (30 each of A-E)
         first_150 = []
+        bio_count = 0  # Track total bio products
+        target_bio = 75  # Target number of bio products
+        
+        # First 150 products (30 each of A-E)
         for grade in ['a', 'b', 'c', 'd', 'e']:
             print(f"\nCollecting products with Nutriscore {grade.upper()}...")
             products = self._collect_products_by_nutriscore(grade, 30)
-            first_150.extend(products)
-            print(f"Collected {len(products)} products with Nutriscore {grade.upper()}")
             
+            # Count bio products in this batch
+            for product in products:
+                if product['is_bio']:
+                    bio_count += 1
+            
+            first_150.extend(products)
+            print(f"Collected {len(products)} products with Nutriscore {grade.upper()} (Bio products so far: {bio_count})")
+        
         # Remaining 150 products (any distribution)
         print("\nCollecting remaining products...")
         remaining_150 = []
@@ -103,12 +117,31 @@ class OpenFoodFactsClient:
                         product not in first_150 and 
                         product not in remaining_150 and 
                         len(remaining_150) < 150):
-                        remaining_150.append(product)
+                        
+                        # If we need more bio products, only add bio products
+                        if bio_count < target_bio:
+                            if product['is_bio']:
+                                remaining_150.append(product)
+                                bio_count += 1
+                        # If we have enough bio products, only add non-bio products
+                        elif bio_count == target_bio:
+                            if not product['is_bio']:
+                                remaining_150.append(product)
+                        # If we somehow have too many bio products, only add non-bio products
+                        else:
+                            if not product['is_bio']:
+                                remaining_150.append(product)
                 
                 time.sleep(1)  # Be nice to the API
             page += 1
 
-        return first_150 + remaining_150
+        total_products = first_150 + remaining_150
+        final_bio_count = sum(1 for p in total_products if p['is_bio'])
+        print(f"\nFinal collection complete:")
+        print(f"Total products: {len(total_products)}")
+        print(f"Total Bio products: {final_bio_count}")
+        
+        return total_products
 
     def save_products(self, products, filename="pasta_products.json"):
         """Save collected products to a JSON file"""

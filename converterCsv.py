@@ -34,33 +34,48 @@ def json_to_csv(json_file_path, csv_file_path, encoding='utf-8'):
                 processed_item[key] = value
         processed_data.append(processed_item)
     
+    # Flatten 'nutriments' dictionary into the main item dictionary
+    all_keys = set()
+    for item in processed_data:
+        if 'nutriments' in item:
+            nutriments = item.pop('nutriments')
+            item.update(nutriments)
+        all_keys.update(item.keys())
+    # Define the desired order of columns
+    desired_order = [
+        'code', 'product_name', 'labels', 'brands', 'categories_tags_en', 'nutriscore_grade', 'Yuka_score', 'Yuka_class', 'ecoscore_grade',
+        'ingredients_text', 'additives_tags', 'additives_count',
+        'image_url', 'image_small_url', 'image_front_url', 'image_front_small_url'
+    ]
+
+    # Ensure 'Yuka_score' and 'Yuka_class' are included in the data
+    for item in processed_data:
+        if 'Yuka_score' not in item:
+            item['Yuka_score'] = ''
+        if 'Yuka_class' not in item:
+            item['Yuka_class'] = ''
+
+    # Ensure all keys are included in the fieldnames
+    fieldnames = [key for key in desired_order if key in all_keys]
+
+    # Ensure 'Yuka_score' and 'Yuka_class' are included in the fieldnames
+    if 'Yuka_score' not in fieldnames:
+        fieldnames.append('Yuka_score')
+    if 'Yuka_class' not in fieldnames:
+        fieldnames.append('Yuka_class')
+    
+    # Add all remaining keys to the fieldnames
+    remaining_keys = [key for key in all_keys if key not in fieldnames]
+    fieldnames.extend(remaining_keys)
+    
     # Write to CSV with UTF-8 encoding and BOM for Excel compatibility
     if processed_data:
-        fieldnames = processed_data[0].keys()
         with open(csv_file_path, 'w', newline='', encoding='utf-8-sig') as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(processed_data)
 
 # Example usage
-if __name__ == "__main__":
-    # Example JSON data
-    example_json = """[
-        {
-            "name": "John",
-            "skills": ["Python", "JavaScript", "SQL"],
-            "age": 30
-        },
-        {
-            "name": "Jane",
-            "skills": ["Java", "C++"],
-            "age": 28
-        }
-    ]"""
-    
-    # Save example JSON to a file
-    with open('example.json', 'w', encoding='utf-8') as f:
-        f.write(example_json)
-    
+if __name__ == "__main__":        
     # Convert to CSV
     json_to_csv('pasta_products.json', 'output.csv')
