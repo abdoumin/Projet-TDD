@@ -3,6 +3,8 @@
   sugars_100g: 63.0
   saturated-fat_value: 14.0
   sodium_100g: 104.16
+  Nbr additifs à risque: 6.0
+  additives_count: 15
   fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.0
   proteins_100g: 0.0
   fiber_100g: 0.0
@@ -12,43 +14,53 @@
   sugars_100g: 0.0
   saturated-fat_value: 0.0
   sodium_100g: 0.0
+  Nbr additifs à risque: 0.0
+  additives_count: 0
   fruits-vegetables-nuts-estimate-from-ingredients_serving: 85.2
   proteins_100g: 30.5
   fiber_100g: 16.9
 
 π2:
-  energy-kcal_value: 133.40000000000006
-  sugars_100g: 1.4800000000000004
+  energy-kcal_value: 123.0
+  sugars_100g: 1.4
   saturated-fat_value: 0.3
   sodium_100g: 0.004
-  fruits-vegetables-nuts-estimate-from-ingredients_serving: 13.510000000000002
+  Nbr additifs à risque: 0.0
+  additives_count: 0.0
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 13.55
   proteins_100g: 12.5
-  fiber_100g: 3.3200000000000016
+  fiber_100g: 3.4
 
 π3:
-  energy-kcal_value: 248.60000000000002
+  energy-kcal_value: 246.0
   sugars_100g: 2.3
   saturated-fat_value: 0.6
-  sodium_100g: 0.26
-  fruits-vegetables-nuts-estimate-from-ingredients_serving: 3.732374999999996
-  proteins_100g: 10.280000000000003
+  sodium_100g: 0.256
+  Nbr additifs à risque: 0.0
+  additives_count: 0.0
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 4.0
+  proteins_100g: 10.7
   fiber_100g: 2.5
 
 π4:
-  energy-kcal_value: 336.0
-  sugars_100g: 3.2400000000000007
-  saturated-fat_value: 1.9
-  sodium_100g: 0.368
+  energy-kcal_value: 315.0
+  sugars_100g: 3.2
+  saturated-fat_value: 1.7
+  sodium_100g: 0.36
+  Nbr additifs à risque: 0.0
+  additives_count: 0.0
   fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.0
-  proteins_100g: 7.360000000000001
+  proteins_100g: 7.3
   fiber_100g: 1.8
 
 π5:
   energy-kcal_value: 359.0
-  sugars_100g: 3.620000000000002
-  saturated-fat_value: 4.0
+  sugars_100g: 3.6
+  saturated-fat_value: 3.6
   sodium_100g: 0.52
+  Nbr additifs à risque: 0.0
+  additives_count: 2.0
   fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.0
-  proteins_100g: 4.4
-  fiber_100g: 1.2
+  proteins_100g: 4.3999999999999995
+  fiber_100g: 1.3
 

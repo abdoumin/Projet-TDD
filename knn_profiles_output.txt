@@ -1,0 +1,66 @@
+π1:
+  energy-kcal_value: 372.12148809523813
+  sugars_100g: 8.535892857142857
+  saturated-fat_value: 7.475854166666669
+  sodium_100g: 7.643099107142857
+  Nbr additifs à risque: 1.8125
+  additives_count: 5.6875
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.7681736457959889
+  proteins_100g: 10.171964285714289
+  fiber_100g: 2.7579464315516624
+
+π2:
+  energy-kcal_value: 297.1904761904762
+  sugars_100g: 2.6480952380952383
+  saturated-fat_value: 6.09047619047619
+  sodium_100g: 0.7093333333333334
+  Nbr additifs à risque: 0.3333333333333333
+  additives_count: 2.4761904761904763
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 8.914759582594055
+  proteins_100g: 9.980952380952381
+  fiber_100g: 1.6961904761904765
+
+π3:
+  energy-kcal_value: 197.75510204081633
+  sugars_100g: 2.4031020408163264
+  saturated-fat_value: 2.757142857142857
+  sodium_100g: 0.4194897959183673
+  Nbr additifs à risque: 0.3673469387755102
+  additives_count: 2.204081632653061
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 9.618471964900692
+  proteins_100g: 6.784285714285715
+  fiber_100g: 1.6353530612244902
+
+π4:
+  energy-kcal_value: 174.22033898305085
+  sugars_100g: 2.394067795801971
+  saturated-fat_value: 1.3727118644067797
+  sodium_100g: 0.3336745761095465
+  Nbr additifs à risque: 0.05084745762711865
+  additives_count: 0.7627118644067796
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 15.407488372880454
+  proteins_100g: 6.003389836974063
+  fiber_100g: 2.002542372881356
+
+π5:
+  energy-kcal_value: 329.12535333333335
+  sugars_100g: 3.056
+  saturated-fat_value: 0.39666666674613943
+  sodium_100g: 0.031647999998807914
+  Nbr additifs à risque: 0.05333333333333334
+  additives_count: 0.06666666666666667
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 3.537960546875
+  proteins_100g: 11.296000000000001
+  fiber_100g: 3.6786666666666656
+
+π6:
+  energy-kcal_value: 263.3002826666667
+  sugars_100g: 2.4448000000000003
+  saturated-fat_value: 0.31733333339691155
+  sodium_100g: 0.025318399999046334
+  Nbr additifs à risque: 0.04266666666666667
+  additives_count: 0.05333333333333334
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 4.24555265625
+  proteins_100g: 13.555200000000001
+  fiber_100g: 4.414399999999999
+

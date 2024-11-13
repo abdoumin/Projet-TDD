@@ -130,20 +130,18 @@ class ElectreTri:
     #     self.profiles = profiles
     #     return profiles
     
-    def calculate_profiles_knn(self, output_file="profiles.csv"):
+    def calculate_profiles_knn(self):
         """
-        Calculate profiles based on existing Nutri-Score categories and save to a CSV file.
-        
-        Args:
-            output_file (str): Path to save the calculated profiles.
+        Calculate six profiles based on existing Nutri-Score categories and display them in the specified format.
         """
-        
+
+        # Preprocess data to ensure it's ready for profile calculation
         self.preprocess_data()
 
         # Define an empty dictionary to store profiles
         profiles = {}
         
-        # Define Nutri-Score categories (from worst 'E' to best 'A')
+        # Define Nutri-Score categories in order from worst ('E') to best ('A')
         classes = ['E', 'D', 'C', 'B', 'A']
         
         # Calculate the centroid for each Nutri-Score category
@@ -153,19 +151,20 @@ class ElectreTri:
             if mask.any():  # Check if there are items in this category
                 # Calculate the mean values for all relevant features in this category, excluding 'nutriscore_grade'
                 centroid = self.data[mask][self.criteres_minimiser + self.criteres_maximiser].mean()
-                # Store the centroid as a profile, with π1 being the worst (E) and π5 the best (A)
+                # Store the centroid as a profile
                 profiles[f'π{i}'] = centroid
-        
-        # Convert profiles dictionary to a DataFrame for easier saving
-        profiles_df = pd.DataFrame(profiles).T  # Transpose for better layout
-        
-        # Save the profiles DataFrame to a CSV file
-        profiles_df.to_csv(output_file, index=True)
-        
+
+        # Create a sixth profile (π6) based on the 'A' profile with further enhanced values
+        if 'π5' in profiles:
+            best_profile = profiles['π5'].copy()
+            for criterion in self.criteres_minimiser:
+                best_profile[criterion] = max(self.data[criterion].min(), best_profile[criterion] * 0.8)  # Enhance minimization
+            for criterion in self.criteres_maximiser:
+                best_profile[criterion] = min(self.data[criterion].max(), best_profile[criterion] * 1.2)  # Enhance maximization
+            profiles['π6'] = best_profile        
         # Save profiles to the instance for future use
-        self.profiles = profiles_df
-        print(f"Profiles saved to {output_file}")
-        return profiles_df
+        self.profiles = profiles
+        return profiles
 
     def concordance_index(self, product, profile):
         """
@@ -264,4 +263,4 @@ save_profiles_to_file(quantile_profiles, filename="quantile_profiles_output.txt"
 
 # Calculate KNN-based profiles
 knn_profiles = electre.calculate_profiles_knn()
-save_profiles_to_file(knn_profiles, filename="cluster_profiles_output.txt")
+save_profiles_to_file(knn_profiles, filename="knn_profiles_output.txt")
