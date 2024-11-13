@@ -1,0 +1,45 @@
+π1:
+  energy-kcal_value: 371.598126984127
+  sugars_100g: 3.6712095238095235
+  saturated-fat_value: 8.050455555555557
+  sodium_100g: 0.9748861904761907
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 1.8075341224386552
+  proteins_100g: 9.95004761904762
+  fiber_100g: 1.6748147619047633
+
+π2:
+  energy-kcal_value: 325.1117252252252
+  sugars_100g: 2.9103603599307775
+  saturated-fat_value: 1.3255855856392837
+  sodium_100g: 0.196670270183548
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 2.1741363492828123
+  proteins_100g: 11.33648648992315
+  fiber_100g: 3.427657657657657
+
+π3:
+  energy-kcal_value: 133.18292682926827
+  sugars_100g: 2.484146342626432
+  saturated-fat_value: 1.5621951207882019
+  sodium_100g: 0.34287804878048794
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 18.983618779504443
+  proteins_100g: 4.5134146329833245
+  fiber_100g: 1.4670731707317075
+
+π4:
+  energy-kcal_value: 396.0
+  sugars_100g: 1.8
+  saturated-fat_value: 9.9
+  sodium_100g: 104.16
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.0
+  proteins_100g: 8.0
+  fiber_100g: 2.0
+
+π5:
+  energy-kcal_value: 355.0
+  sugars_100g: 63.0
+  saturated-fat_value: 0.5
+  sodium_100g: 0.88
+  fruits-vegetables-nuts-estimate-from-ingredients_serving: 0.0
+  proteins_100g: 14.0
+  fiber_100g: 3.7000000476837
+

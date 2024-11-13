@@ -1,20 +1,28 @@
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import NearestNeighbors
+
+
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 
 class ElectreTri:
-    def __init__(self, file_path, weights, lambda_value=0.6):
+    def __init__(self, file_path, weights, lambda_value=0.6, k=5):
         """
         Initialisation d'ELECTRE TRI
         """
         self.data = pd.read_csv(file_path)
         self.weights = weights
         self.lambda_value = lambda_value
+        self.k = k  # Number of nearest neighbors for KNN-based profiles
         self.profiles = None
         
-        # Define the criteria to minimize and maximize based on instructions
+        # Define the criteria to minimize and maximize based on updated instructions
         self.criteres_minimiser = [
-            'energy-kcal_value', 'sugars_100g', 'saturated-fat_value', 'sodium_100g'
+            'energy-kcal_value', 'sugars_100g', 'saturated-fat_value', 
+            'sodium_100g', 'Nbr additifs à risque', 'additives_count'
         ]
         self.criteres_maximiser = [
             'fruits-vegetables-nuts-estimate-from-ingredients_serving', 
@@ -27,15 +35,22 @@ class ElectreTri:
         Preprocess the data to ensure energy values are in kcal and to prepare relevant columns.
         """
         # Ensure energy values are in kcal
-        self.data['energy_value_kcal'] = self.data.apply(
-            lambda row: row['energy-kcal_value'] if pd.notnull(row['energy-kcal_value']) else (
-                row['energy_value'] * 0.239006 if row['energy_unit'] == 'kJ' else row['energy_value']
-            ), axis=1
-        )
+        if 'energy-kcal_value' in self.data.columns:
+            self.data['energy_value_kcal'] = self.data.apply(
+                lambda row: row['energy-kcal_value'] if pd.notnull(row['energy-kcal_value']) else (
+                    row['energy_value'] * 0.239006 if row['energy_unit'] == 'kJ' else row['energy_value']
+                ), axis=1
+            )
+        else:
+            # Convert 'energy_value' to kcal if 'energy-kcal_value' is not present
+            self.data['energy_value_kcal'] = self.data.apply(
+                lambda row: row['energy_value'] * 0.239006 if row['energy_unit'] == 'kJ' else row['energy_value'],
+                axis=1
+            )
         
-        # Filter data to only include necessary columns
+        # Filter data to only include necessary columns and drop missing values
         self.data = self.data[
-            self.criteres_minimiser + self.criteres_maximiser
+            self.criteres_minimiser + self.criteres_maximiser + ['nutriscore_grade']
         ].dropna()
         
     def calculate_profiles_quantiles(self):
@@ -76,31 +91,81 @@ class ElectreTri:
         self.profiles = profiles
         return profiles
     
-    def calculate_profiles_clustering(self, num_profiles=5):
+    # def calculate_profiles_knn(self):
+    #     """
+    #     Méthode pour calculer les profils limites basé sur K-Nearest Neighbors
+    #     """
+    #     self.preprocess_data()
+        
+    #     # Normalize data for consistent distance measurements
+    #     scaler = StandardScaler()
+    #     data_scaled = scaler.fit_transform(self.data[self.criteres_minimiser + self.criteres_maximiser])
+    
+        
+    #     profiles = {}
+    #     categories = self.data['nutriscore_grade'].unique()
+        
+    #     for category in categories:
+    #         # Filter data for the current category
+    #         category_data = self.data[self.data['nutriscore_grade'] == category]
+    #         # Drop the 'nutriscore_grade' column to ensure only numeric data remains
+    #         numeric_category_data = category_data[self.criteres_minimiser + self.criteres_maximiser]
+
+    #         if len(numeric_category_data) < self.k:
+    #             print(f"Not enough data points in category {category} for KNN with k={self.k}.")
+    #             continue
+            
+    #         # Find k-nearest neighbors within the category
+    #         knn = NearestNeighbors(n_neighbors=self.k)
+    #         category_data_scaled = scaler.transform(category_data[self.criteres_minimiser + self.criteres_maximiser])
+    #         knn.fit(category_data_scaled)
+            
+    #         # Compute the mean of the k-nearest neighbors as the profile for this category
+    #         distances, indices = knn.kneighbors(category_data_scaled)
+    #         profile_values = numeric_category_data.iloc[indices.flatten()].mean()
+            
+    #         # Store the profile in the original scale
+    #         profiles[f'π_{category}'] = profile_values.to_dict()
+        
+    #     self.profiles = profiles
+    #     return profiles
+    
+    def calculate_profiles_knn(self, output_file="profiles.csv"):
         """
-        Méthode pour calculer les profils limites basé sur K-Means clustering
+        Calculate profiles based on existing Nutri-Score categories and save to a CSV file.
+        
+        Args:
+            output_file (str): Path to save the calculated profiles.
         """
-        # Preprocess data
+        
         self.preprocess_data()
-        
-        # Normalisation des données
-        scaler = StandardScaler()
-        data_scaled = scaler.fit_transform(self.data)
-        
-        # Apply KMeans to create the clusters
-        kmeans = KMeans(n_clusters=num_profiles, random_state=42)
-        kmeans.fit(data_scaled)
-        
-        # Cluster centers become the profile limits
-        cluster_centers = scaler.inverse_transform(kmeans.cluster_centers_)
-        
-        # Create a dictionary to store profiles
+
+        # Define an empty dictionary to store profiles
         profiles = {}
-        for i in range(num_profiles):
-            profiles[f'π{i+1}'] = dict(zip(self.data.columns, cluster_centers[i]))
         
-        self.profiles = profiles
-        return profiles
+        # Define Nutri-Score categories (from worst 'E' to best 'A')
+        classes = ['E', 'D', 'C', 'B', 'A']
+        
+        # Calculate the centroid for each Nutri-Score category
+        for i, classe in enumerate(classes, 1):
+            # Filter data for each Nutri-Score category
+            mask = (self.data['nutriscore_grade'].str.upper() == classe)
+            if mask.any():  # Check if there are items in this category
+                # Calculate the mean values for all relevant features in this category, excluding 'nutriscore_grade'
+                centroid = self.data[mask][self.criteres_minimiser + self.criteres_maximiser].mean()
+                # Store the centroid as a profile, with π1 being the worst (E) and π5 the best (A)
+                profiles[f'π{i}'] = centroid
+        
+        # Convert profiles dictionary to a DataFrame for easier saving
+        profiles_df = pd.DataFrame(profiles).T  # Transpose for better layout
+        
+        # Save the profiles DataFrame to a CSV file
+        profiles_df.to_csv(output_file, index=True)
+        
+        # Save profiles to the instance for future use
+        self.profiles = profiles_df
+        print(f"Profiles saved to {output_file}")
+        return profiles_df
 
     def concordance_index(self, product, profile):
         """
@@ -176,26 +241,27 @@ class ElectreTri:
         self.data['classe_electre'] = results
         return self.data
 
+# Method to save profiles to a file with UTF-8 encoding
+def save_profiles_to_file(profiles, filename="profiles_output.txt"):
+    with open(filename, "w", encoding="utf-8") as f:
+        for profile_name, profile_values in profiles.items():
+            f.write(f"{profile_name}:\n")
+            for criterion, value in profile_values.items():
+                f.write(f"  {criterion}: {value}\n")
+            f.write("\n")  # Add a blank line between profiles
+    print(f"Profiles saved to {filename}")
+
+
 # Initialize the ElectreTri class with the CSV file path and the weights
 file_path = "dataPastas-refined-output.csv"
 weights = [2, 2, 2, 2, 1, 1, 1, 4, 4]  # Example weights, adjust as needed
 
 electre = ElectreTri(file_path, weights)
 
-# Generate and display quantile-based profiles
-print("Quantile-Based Profiles:")
+# Generate quantile-based profiles and save them to a file
 quantile_profiles = electre.calculate_profiles_quantiles()
-for profile_name, profile_values in quantile_profiles.items():
-    print(f"{profile_name}:")
-    for criterion, value in profile_values.items():
-        print(f"  {criterion}: {value}")
-    print()
+save_profiles_to_file(quantile_profiles, filename="quantile_profiles_output.txt")
 
-# Generate and display clustering-based profiles
-print("Clustering-Based Profiles:")
-cluster_profiles = electre.calculate_profiles_clustering()
-for profile_name, profile_values in cluster_profiles.items():
-    print(f"{profile_name}:")
-    for criterion, value in profile_values.items():
-        print(f"  {criterion}: {value}")
-    print()
+# Calculate KNN-based profiles
+knn_profiles = electre.calculate_profiles_knn()
+save_profiles_to_file(knn_profiles, filename="cluster_profiles_output.txt")
