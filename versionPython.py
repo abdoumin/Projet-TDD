@@ -7,6 +7,8 @@ import requests
 import json
 from collections import defaultdict
 import time
+import pandas as pd
+
 
 class OpenFoodFactsClient:
     def __init__(self):
@@ -19,7 +21,6 @@ class OpenFoodFactsClient:
             "categories_tags_en,ingredients_text,nutriments,additives_tags,"
             "image_url,image_small_url,image_front_url,image_front_small_url,labels"
         )
-        
     def _fetch_page(self, nutriscore, page=1):
         """Fetch a single page of products with specific nutriscore"""
         params = {
@@ -169,14 +170,53 @@ class OpenFoodFactsClient:
         print("\nRemaining 150 products:")
         for grade in sorted(remaining_dist.keys()):
             print(f"Nutriscore {grade.upper()}: {remaining_dist.get(grade, 0)}")
+            
 
+    def summarize_aliments(self,csv_file_path):
+        # Read the CSV file
+        df = pd.read_csv(csv_file_path)
+        
+        # Total count of aliments
+        total_count = len(df)
+
+        # Calculate the count and format for Nutriscore grades A-E
+        nutriscore_summary = {}
+        for grade in ['A', 'B', 'C', 'D', 'E']:
+            count = df['nutriscore_grade'].str.upper().value_counts().get(grade, 0)
+            nutriscore_summary[f'Nutriscore {grade}'] = f"{count}/{total_count}"
+
+        # Calculate the count and format for Ecoscore grades A-E
+        ecoscore_summary = {}
+        for grade in ['A', 'B', 'C', 'D', 'E']:
+            count = df['ecoscore_grade'].str.upper().value_counts().get(grade, 0)
+            ecoscore_summary[f'Ecoscore {grade}'] = f"{count}/{total_count}"
+
+        # Calculate the count and format for Bio label
+        bio_count = df['is_bio'].sum() if 'is_bio' in df.columns else 0
+        bio_summary = f"{bio_count}/{total_count}"
+        
+        # Return summary
+        summary = {
+            **nutriscore_summary,
+            **ecoscore_summary,
+            "Bio": bio_summary
+        }
+        
+        return summary
+
+# Example usage (assuming your file is named 'pasta_products.csv')
+# result = summarize_aliments('pasta_products.csv')
+# print(result)
+
+    
 def main():
     client = OpenFoodFactsClient()
     print("Starting to collect pasta products...")
-    
-    products = client.collect_all_products()
-    client.save_products(products)
-    
+    # products = client.collect_all_products()
+    # client.save_products(products)
+   
+    csv_file_path = 'dataPastas-refined-output.csv'
+    print(client.summarize_aliments(csv_file_path))
     # if len(products['first_150']) == 150 and len(products['remaining_150']) == 150:
     # else:
     #     print("\nFailed to collect required number of products:")
