@@ -91,41 +91,41 @@ class ElectreTri:
         self.profiles = profiles
         return profiles
         
-    # def calculate_profiles_knn(self):
-    #     """
-    #     Calculate six profiles based on existing Nutri-Score categories and display them in the specified format.
-    #     """
+    def calculate_profiles_knn(self):
+        """
+        Calculate six profiles based on existing Nutri-Score categories and display them in the specified format.
+        """
 
-    #     # Preprocess data to ensure it's ready for profile calculation
-    #     self.preprocess_data()
+        # Preprocess data to ensure it's ready for profile calculation
+        self.preprocess_data()
 
-    #     # Define an empty dictionary to store profiles
-    #     profiles = {}
+        # Define an empty dictionary to store profiles
+        profiles = {}
         
-    #     # Define Nutri-Score categories in order from worst ('E') to best ('A')
-    #     classes = ['E', 'D', 'C', 'B', 'A']
+        # Define Nutri-Score categories in order from worst ('E') to best ('A')
+        classes = ['E', 'D', 'C', 'B', 'A']
         
-    #     # Calculate the centroid for each Nutri-Score category
-    #     for i, classe in enumerate(classes, 1):
-    #         # Filter data for each Nutri-Score category
-    #         mask = (self.data['nutriscore_grade'].str.upper() == classe)
-    #         if mask.any():  # Check if there are items in this category
-    #             # Calculate the mean values for all relevant features in this category, excluding 'nutriscore_grade'
-    #             centroid = self.data[mask][self.criteres_minimiser + self.criteres_maximiser].mean()
-    #             # Store the centroid as a profile
-    #             profiles[f'π{i}'] = centroid
+        # Calculate the centroid for each Nutri-Score category
+        for i, classe in enumerate(classes, 1):
+            # Filter data for each Nutri-Score category
+            mask = (self.data['nutriscore_grade'].str.upper() == classe)
+            if mask.any():  # Check if there are items in this category
+                # Calculate the mean values for all relevant features in this category, excluding 'nutriscore_grade'
+                centroid = self.data[mask][self.criteres_minimiser + self.criteres_maximiser].mean()
+                # Store the centroid as a profile
+                profiles[f'π{i}'] = centroid
 
-    #     # Create a sixth profile (π6) based on the 'A' profile with further enhanced values
-    #     if 'π5' in profiles:
-    #         best_profile = profiles['π5'].copy()
-    #         for criterion in self.criteres_minimiser:
-    #             best_profile[criterion] = max(self.data[criterion].min(), best_profile[criterion] * 0.8)  # Enhance minimization
-    #         for criterion in self.criteres_maximiser:
-    #             best_profile[criterion] = min(self.data[criterion].max(), best_profile[criterion] * 1.2)  # Enhance maximization
-    #         profiles['π6'] = best_profile        
-    #     # Save profiles to the instance for future use
-    #     self.profiles = profiles
-    #     return profiles
+        # Create a sixth profile (π6) based on the 'A' profile with further enhanced values
+        if 'π5' in profiles:
+            best_profile = profiles['π5'].copy()
+            for criterion in self.criteres_minimiser:
+                best_profile[criterion] = max(self.data[criterion].min(), best_profile[criterion] * 0.8)  # Enhance minimization
+            for criterion in self.criteres_maximiser:
+                best_profile[criterion] = min(self.data[criterion].max(), best_profile[criterion] * 1.2)  # Enhance maximization
+            profiles['π6'] = best_profile        
+        # Save profiles to the instance for future use
+        self.profiles = profiles
+        return profiles
     
     def calculate_profiles_clustering(self, num_profiles=6):
         """
@@ -238,7 +238,7 @@ class ElectreTri:
             str: The assigned class for the product.
         """
         for k in range(1, 6):  # Start with π1 as the worst (E), moving up to π5 as the best (A)
-            if self.outranks(profiles[f'π{k}'], product):
+            if not self.outranks(product,profiles[f'π{k}']):
                 return chr(69 - k + 1)  # E=69, D=68, C=67, B=66, A=65
         return 'A'  # Default to 'A' if no profile outranks the product
     def process_csv_with_classes(self, input_file, knn_profiles, quantile_profiles,majority_sorting_method,output_file="output_with_classes.csv"):
@@ -310,7 +310,7 @@ lambda_values = [0.5, 0.6, 0.7]  # Lambda values to test
 electre = ElectreTri(file_path, weights, None)
 # Generate quantile and KNN profiles
 quantile_profiles = electre.calculate_profiles_quantiles()
-knn_profiles = electre.calculate_profiles_clustering()
+knn_profiles = electre.calculate_profiles_knn()
 
 save_profiles_to_csv(quantile_profiles,"quantiles_profiles_output.txt")
 save_profiles_to_csv(knn_profiles,"knn_profiles_output.txt")
