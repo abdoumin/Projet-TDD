@@ -310,7 +310,7 @@ lambda_values = [0.5, 0.6, 0.7]  # Lambda values to test
 electre = ElectreTri(file_path, weights, None)
 # Generate quantile and KNN profiles
 quantile_profiles = electre.calculate_profiles_quantiles()
-knn_profiles = electre.calculate_profiles_knn()
+knn_profiles = electre.calculate_profiles_clustering()
 
 save_profiles_to_csv(quantile_profiles,"quantiles_profiles_output.txt")
 save_profiles_to_csv(knn_profiles,"knn_profiles_output.txt")
