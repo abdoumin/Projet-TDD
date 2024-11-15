@@ -83,9 +83,9 @@ class ElectreTri:
         for i, q in enumerate(quantiles, 2):
             profile = {}
             for critere in self.criteres_minimiser:
-                profile[critere] = self.data[critere].quantile(q)
+                profile[critere] = self.data[critere].quantile(1-q)
             for critere in self.criteres_maximiser:
-                profile[critere] = self.data[critere].quantile(1 - q)
+                profile[critere] = self.data[critere].quantile(q)
             profiles[f'π{i}'] = profile
             
         self.profiles = profiles
@@ -241,7 +241,7 @@ class ElectreTri:
             if self.outranks(profiles[f'π{k}'], product):
                 return chr(69 - k + 1)  # E=69, D=68, C=67, B=66, A=65
         return 'A'  # Default to 'A' if no profile outranks the product
-    def process_csv_with_classes(self, input_file, knn_profiles, quantile_profiles, output_file="output_with_classes.csv"):
+    def process_csv_with_classes(self, input_file, knn_profiles, quantile_profiles,majority_sorting_method,output_file="output_with_classes.csv"):
         """
         Process a CSV file, classify products using KNN and quantile profiles, and add 'knn_class' and 'quantile_class' columns.
         
@@ -261,11 +261,11 @@ class ElectreTri:
         # Process each product in the dataset
         for _, product in self.data.iterrows():
             # Determine the class using KNN-based profiles with pessimistic majority sorting
-            knn_class = self.pessimistic_majority_sorting(product, knn_profiles)
+            knn_class = majority_sorting_method(product, knn_profiles)
             knn_classes.append(knn_class)
             
             # Determine the class using quantile-based profiles with pessimistic majority sorting
-            quantile_class = self.pessimistic_majority_sorting(product, quantile_profiles)
+            quantile_class = majority_sorting_method(product, quantile_profiles)
             quantile_classes.append(quantile_class)
         
         # Add the classes to the DataFrame
@@ -321,8 +321,19 @@ for lambda_value in lambda_values:
     electre = ElectreTri(file_path, weights, lambda_value)
 
     # Define the output file name based on the lambda value
-    output_file = f"output_with_classes_lambda_{lambda_value}.csv"
+    output_file = f"output_with_classes_lambda_pessimestic_{lambda_value}.csv"
     
     # Process the CSV and save the classified data to the Excel file
-    electre.process_csv_with_classes(file_path, knn_profiles, quantile_profiles, output_file=output_file)
+    electre.process_csv_with_classes(file_path, knn_profiles, quantile_profiles,electre.pessimistic_majority_sorting,output_file=output_file)
+for lambda_value in lambda_values:
+    # Instantiate the ElectreTri class with the current lambda value
+    
+    electre = ElectreTri(file_path, weights, lambda_value)
+
+    # Define the output file name based on the lambda value
+    output_file = f"output_with_classes_lambda_optimistic_{lambda_value}.csv"
+    
+    # Process the CSV and save the classified data to the Excel file
+    electre.process_csv_with_classes(file_path, knn_profiles, quantile_profiles,electre.optimistic_majority_sorting,output_file=output_file)
+
 
