@@ -91,79 +91,103 @@ class ElectreTri:
         self.profiles = profiles
         return profiles
         
-    def calculate_profiles_knn(self):
+    def calculate_profiles_knn(self, k=5, num_profiles=6):
         """
-        Calculate six profiles based on existing Nutri-Score categories and display them in the specified format.
-        """
-
-        # Preprocess data to ensure it's ready for profile calculation
-        self.preprocess_data()
-
-        # Define an empty dictionary to store profiles
-        profiles = {}
-        
-        # Define Nutri-Score categories in order from worst ('E') to best ('A')
-        classes = ['E', 'D', 'C', 'B', 'A']
-        
-        # Calculate the centroid for each Nutri-Score category
-        for i, classe in enumerate(classes, 1):
-            # Filter data for each Nutri-Score category
-            mask = (self.data['nutriscore_grade'].str.upper() == classe)
-            if mask.any():  # Check if there are items in this category
-                # Calculate the mean values for all relevant features in this category, excluding 'nutriscore_grade'
-                centroid = self.data[mask][self.criteres_minimiser + self.criteres_maximiser].mean()
-                # Store the centroid as a profile
-                profiles[f'π{i}'] = centroid
-
-        # Create a sixth profile (π6) based on the 'A' profile with further enhanced values
-        if 'π5' in profiles:
-            best_profile = profiles['π5'].copy()
-            for criterion in self.criteres_minimiser:
-                best_profile[criterion] = max(self.data[criterion].min(), best_profile[criterion] * 0.8)  # Enhance minimization
-            for criterion in self.criteres_maximiser:
-                best_profile[criterion] = min(self.data[criterion].max(), best_profile[criterion] * 1.2)  # Enhance maximization
-            profiles['π6'] = best_profile        
-        # Save profiles to the instance for future use
-        self.profiles = profiles
-        return profiles
-    
-    def calculate_profiles_clustering(self, num_profiles=6):
-        """
-        Calculate profiles based on K-Means clustering and display them in the specified format.
+        Calculates profiles using true K-Nearest Neighbors algorithm.
         
         Args:
-            num_profiles (int): Number of profiles to create (default is 6).
+            k: Number of nearest neighbors to consider
+            num_profiles: Number of profiles to generate (default 6)
         
         Returns:
-            dict: A dictionary with profiles as centroids of each cluster.
+            Dictionary of ordered profiles based on KNN
         """
-
-        # Preprocess data to ensure it's ready for clustering
         self.preprocess_data()
         
-        # Normalize the data for consistent clustering
+        # Initialize profiles dictionary
+        profiles = {}
+        
+        # Standardize the data
         scaler = StandardScaler()
         data_scaled = scaler.fit_transform(self.data[self.criteres_minimiser + self.criteres_maximiser])
-
-        # Apply K-Means clustering to create the specified number of clusters
-        kmeans = KMeans(n_clusters=num_profiles, random_state=42)
-        kmeans.fit(data_scaled)
-
-        # Retrieve the cluster centers (centroids) and transform them back to the original scale
-        cluster_centers = scaler.inverse_transform(kmeans.cluster_centers_)
         
-        # Create profiles from cluster centers and order them from worst to best
-        profiles = {}
-        for i, center in enumerate(sorted(cluster_centers, key=lambda x: -x[0]), 1):  # Sort by a criterion for ordering
-            profiles[f'π{i}'] = dict(zip(self.data.columns, center))
+        # Create KNN model
+        knn = NearestNeighbors(n_neighbors=k)
+        knn.fit(data_scaled)
         
-        # Save profiles to the instance for future use
-        self.profiles = profiles
+        # Calculate reference points for each profile
+        reference_points = []
+        
+        # Create reference points for each profile
+        for i in range(num_profiles):
+            ratio = i / (num_profiles - 1)  # Creates ratios from 0 to 1
+            ref_point = []
+            
+            # For minimize criteria: worst (high) to best (low)
+            for critere in self.criteres_minimiser:
+                max_val = self.data[critere].max()
+                min_val = self.data[critere].min()
+                ref_point.append(max_val - (max_val - min_val) * ratio)
+                
+            # For maximize criteria: worst (low) to best (high)
+            for critere in self.criteres_maximiser:
+                max_val = self.data[critere].max()
+                min_val = self.data[critere].min()
+                ref_point.append(min_val + (max_val - min_val) * ratio)
+                
+            reference_points.append(ref_point)
+        
+        # Scale reference points
+        reference_points_scaled = scaler.transform(reference_points)
+        
+        # Find k nearest neighbors for each reference point
+        for i, ref_point in enumerate(reference_points_scaled, 1):
+            # Find indices of k nearest neighbors
+            distances, indices = knn.kneighbors([ref_point])
+            
+            # Get the actual data points for these neighbors
+            neighbors = self.data.iloc[indices[0]]
+            
+            # Create profile based on the average of neighbors
+            profile = {}
+            for critere in self.criteres_minimiser + self.criteres_maximiser:
+                profile[critere] = neighbors[critere].mean()
+                
+            profiles[f'π{i}'] = profile
+        
+        # Ensure monotonicity
+        self._enforce_monotonicity(profiles)
+        
         return profiles
 
+    def _enforce_monotonicity(self, profiles):
+        """
+        Enforces monotonicity constraints on profiles.
+        
+        Args:
+            profiles: Dictionary of profiles to adjust
+        """
+        # Iterate through profiles from π1 to π5
+        for i in range(1, 6):
+            current_profile = profiles[f'π{i}']
+            next_profile = profiles[f'π{i+1}']
+            
+            # Enforce constraints for minimize criteria
+            for critere in self.criteres_minimiser:
+                if current_profile[critere] < next_profile[critere]:
+                    # Take the average to maintain some of the KNN characteristics
+                    avg = (current_profile[critere] + next_profile[critere]) / 2
+                    current_profile[critere] = avg
+                    next_profile[critere] = avg
+            
+            # Enforce constraints for maximize criteria
+            for critere in self.criteres_maximiser:
+                if current_profile[critere] > next_profile[critere]:
+                    # Take the average to maintain some of the KNN characteristics
+                    avg = (current_profile[critere] + next_profile[critere]) / 2
+                    current_profile[critere] = avg
+                    next_profile[critere] = avg
     
-
-
     def concordance_index(self, product, profile):
         """
         Calcul des indices de concordance partiels
@@ -310,7 +334,7 @@ lambda_values = [0.5, 0.6, 0.7]  # Lambda values to test
 electre = ElectreTri(file_path, weights, None)
 # Generate quantile and KNN profiles
 quantile_profiles = electre.calculate_profiles_quantiles()
-knn_profiles = electre.calculate_profiles_clustering()
+knn_profiles = electre.calculate_profiles_knn()
 
 save_profiles_to_csv(quantile_profiles,"quantiles_profiles_output.txt")
 save_profiles_to_csv(knn_profiles,"knn_profiles_output.txt")
@@ -337,3 +361,108 @@ for lambda_value in lambda_values:
     electre.process_csv_with_classes(file_path, knn_profiles, quantile_profiles,electre.optimistic_majority_sorting,output_file=output_file)
 
 
+# List of input files
+input_files = [
+    "output_with_classes_lambda_optimistic_0.5.csv",
+    "output_with_classes_lambda_optimistic_0.6.csv",
+    "output_with_classes_lambda_optimistic_0.7.csv",
+    "output_with_classes_lambda_pessimestic_0.5.csv",
+    "output_with_classes_lambda_pessimestic_0.6.csv",
+    "output_with_classes_lambda_pessimestic_0.7.csv"
+]
+
+def generate_profile_counts(input_file):
+    """
+    Generate count statistics for both KNN and quantile methods from an input file
+    """
+    # Read the input file
+    df = pd.read_csv(input_file)
+    
+    # Get counts for KNN method
+    knn_counts = df['knn_class'].value_counts().reset_index()
+    knn_counts.columns = ['Profile', 'Count']
+    knn_counts = knn_counts.sort_values('Profile')
+    
+    # Get counts for quantile method
+    quantile_counts = df['quantile_class'].value_counts().reset_index()
+    quantile_counts.columns = ['Profile', 'Count']
+    quantile_counts = quantile_counts.sort_values('Profile')
+    
+    # Generate output filenames
+    base_name = input_file.replace('.csv', '')
+    knn_output = f"{base_name}_knn_counts.csv"
+    quantile_output = f"{base_name}_quantile_counts.csv"
+    
+    # Save to CSV files
+    knn_counts.to_csv(knn_output, index=False)
+    quantile_counts.to_csv(quantile_output, index=False)
+    
+    print(f"Generated count files for {input_file}:")
+    print(f"- {knn_output}")
+    print(f"- {quantile_output}")
+
+# Process all input files
+for file in input_files:
+    generate_profile_counts(file)
+    
+import pandas as pd
+import glob
+
+def combine_count_files():
+    # Initialize an empty list to store all dataframes
+    all_dfs = []
+    
+    # Lambda values and methods
+    lambda_values = ['0.5', '0.6', '0.7']
+    approaches = ['optimistic', 'pessimestic']
+    methods = ['knn', 'quantile']
+    
+    # Process each combination
+    for approach in approaches:
+        for lambda_val in lambda_values:
+            for method in methods:
+                # Construct filename pattern
+                filename = f"output_with_classes_lambda_{approach}_{lambda_val}_{method}_counts.csv"
+                
+                try:
+                    # Read the CSV file
+                    df = pd.read_csv(filename)
+                    
+                    # Add columns to identify the source
+                    df['Approach'] = approach
+                    df['Lambda'] = lambda_val
+                    df['Method'] = method
+                    
+                    # Rename columns for clarity
+                    df = df.rename(columns={'Profile': 'Class'})
+                    
+                    # Add to list of dataframes
+                    all_dfs.append(df)
+                    
+                except FileNotFoundError:
+                    print(f"Warning: File not found - {filename}")
+    
+    # Combine all dataframes
+    if all_dfs:
+        combined_df = pd.concat(all_dfs, ignore_index=True)
+        
+        # Reorder columns for better readability
+        column_order = ['Class', 'Count', 'Approach', 'Lambda', 'Method']
+        combined_df = combined_df[column_order]
+        
+        # Sort the dataframe
+        combined_df = combined_df.sort_values(['Approach', 'Lambda', 'Method', 'Class'])
+        
+        # Save to CSV
+        output_filename = 'combined_profile_counts.csv'
+        combined_df.to_csv(output_filename, index=False)
+        print(f"Combined results saved to {output_filename}")
+        
+        # Display summary
+        print("\nSummary of combined results:")
+        print(combined_df.to_string())
+    else:
+        print("No files were found to combine")
+
+# Run the combination
+combine_count_files()
