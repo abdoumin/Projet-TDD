@@ -52,6 +52,47 @@ class ElectreTri:
         self.data = self.data[
             self.criteres_minimiser + self.criteres_maximiser + ['nutriscore_grade']
         ].dropna()
+    def categorize_super_nutri_score(self, quantile_class, ecoscore_grade, is_bio):
+        # Normalize input to handle potential case variations
+        pessimist = quantile_class.upper()
+        eco_score = str(ecoscore_grade).upper()
+        bio = str(is_bio).upper()
+
+        # Check for data completeness
+        if pd.isna(pessimist) or pd.isna(eco_score) or pd.isna(bio):
+            return "Non évaluable"
+
+        # More granular scoring logic
+        score_mapping = {
+            "Excellent": [
+                (pessimist == 'A' and eco_score == 'A'),
+            (pessimist == 'A' and eco_score == 'B' and bio == 'TRUE'),
+            #(pessimist == 'A' and bio == 'TRUE')
+            ],
+            "Bon": [
+                (pessimist in ['B', 'C'] and eco_score in ['A', 'B']),
+                (pessimist == 'A' and eco_score in ['B'] and bio == 'FALSE'),
+                (pessimist in ['B', 'C'] and eco_score == 'C' and bio == 'TRUE'),
+            ],
+            "Médiocre": [
+                (pessimist in ['B', 'C'] and eco_score == 'C' and bio == 'FALSE'),
+                (pessimist in ['B', 'C'] and eco_score in ['C', 'D']),
+                    (pessimist == 'D' and eco_score == 'C' and bio == 'TRUE'),
+                ],
+            "Mauvais": [
+                (pessimist in ['B', 'C'] and eco_score == 'E'),
+            (pessimist == 'D' and eco_score == 'C' and bio == 'FALSE'),
+            (pessimist == 'E'),
+        ]
+    }
+
+        # Iterate through categories in order of preference
+        for category, conditions in score_mapping.items():
+            if any(conditions):
+                return category
+
+        return "Mauvais"  # Default case
+
         
     def calculate_profiles_quantiles(self):
         """
@@ -291,14 +332,33 @@ class ElectreTri:
             # Determine the class using quantile-based profiles with pessimistic majority sorting
             quantile_class = majority_sorting_method(product, quantile_profiles)
             quantile_classes.append(quantile_class)
+            super_nutri_score = self.categorize_super_nutri_score(
+                quantile_class,  # Use quantile-based classification for pessimistic
+                product['ecoscore_grade'],  # Assuming 'ecoscore_grade' is in the dataset
+                product['is_bio']  # Assuming 'is_bio' is in the dataset
+            )
+            super_nutri_scores.append(super_nutri_score)
         
         # Add the classes to the DataFrame
         self.data['knn_class'] = knn_classes
         self.data['quantile_class'] = quantile_classes
-        
+        self.data['super_nutri_score'] = super_nutri_scores
         # Save the updated DataFrame to a new CSV file
         self.data.to_csv(output_file, index=False)
         print(f"Processed file saved to {output_file}")
+
+        # Save the Super-NutriScore classifications to a text file
+        with open("super_nutri_scores.txt", "w", encoding="utf-8") as f:
+            for index, row in self.data.iterrows():
+                f.write(f"Product {index + 1}: {row['super_nutri_score']}\n")
+        print("Super-NutriScore classifications saved to super_nutri_scores.txt")
+
+        # Save the DataFrame to an Excel file
+        output_excel_file = "super_nutri_scores.xlsx"
+        columns_to_save = ['code', 'ecoscore_grade', 'is_bio', 'knn_class', 'quantile_class', 'super_nutri_score']
+        self.data[columns_to_save].to_excel(output_excel_file, index=False)
+        print(f"Data saved to {output_excel_file}")
+
 
 
 # Method to save profiles to a file with UTF-8 encoding
@@ -327,7 +387,7 @@ def save_profiles_to_csv(profiles, filename="profiles_output.csv"):
 
 
 # Initialize the ElectreTri class with the CSV file path and the weights
-file_path = "Output-Database.csv"
+file_path = "DB_cereales_Groupe_Allani.csv"
 weights = [2, 2, 2, 2, 1, 1, 1, 4, 4]  # Adjust weights as needed
 lambda_values = [0.5, 0.6, 0.7]  # Lambda values to test
 
