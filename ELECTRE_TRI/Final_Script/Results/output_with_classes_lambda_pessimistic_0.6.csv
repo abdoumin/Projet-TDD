@@ -1,0 +1,275 @@
+code,product_name,nutriscore_grade,ecoscore_grade,is_bio,Yuka_score,Yuka_class,fruits-vegetables-nuts-estimate-from-ingredients_serving,sugars_100g,energy_value,energy_unit,energy-kcal_value,saturated-fat_value,sodium_100g,proteins_100g,fiber_100g,fruits-vegetables-nuts-estimate-from-ingredients_serving.1,Nbr additifs à risque,Nbr additifs à risque modéré,Nbr additifs à risque limité,Nbr additifs sans risque,additives_count,knn_class,quantile_class,super_nutri_score
+8076800195057,Spaghetti N.5,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076809529433,BARILLA PENE ολικης,a,a,False,90,Excellent,0.0,3.5,1466.0,kJ,347.0,0.5,0.004,13.0,8.0,0.0,0,0,0,0,0,A,A,Excellent
+8076802085738,Penne Rigate N°73,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076800376999,Lasagne all'uovo,a,b,False,90,Excellent,0.0,3.0,1558.0,kJ,368.0,1.0,0.032,14.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076809523509,Pâtes linguine collezione 500g,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076800105056,Pâtes spaghetti n°5 1kg,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076800195033,Pâtes Spaghettini N°3 500G,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076809545457,Penne Rigate Senza Glutine,a,b,False,49,Mediocre,0.0,0.5,358.0,kcal,358.0,0.3,0.004,6.5,1.1,0.0,1,0,0,0,1,C,D,Mauvais
+8076800105735,Penne Rigate,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+3038350013606,Panzani torti 500g,a,b,False,90,Excellent,0.0,3.7,1531.0,kJ,361.0,0.4,0.0,12.0,3.6,0.0,0,0,0,0,0,A,B,Bon
+8076809545440,Spaghetti Senza Glutine,a,b,False,49,Mediocre,0.0,0.5,1518.0,kJ,358.0,0.3,0.004,6.5,1.1,0.0,1,0,0,0,1,C,D,Mauvais
+8076809512268,Girandole,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+3175681170841,"Ravioli au tofu, tomates, basilic",a,a,True,94,Excellent,28.333125,2.9,465.0,kJ,111.0,0.4,0.296,3.8,3.8,28.333125,0,0,1,2,3,A,C,Bon
+8076808150072,Pâtes spaghettoni n°7 500g,a,b,False,90,Excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.004,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8076809532709,coquillette,a,b,False,90,Excellent,0.0,3.5,1466.0,kJ,347.0,0.5,0.004,13.0,8.0,0.0,0,0,0,0,0,A,A,Bon
+3038350023001,Coquillettes,a,b,False,90,Excellent,0.0,3.7,1531.0,kJ,361.0,0.4,0.0,12.0,3.6,0.0,0,0,0,0,0,A,B,Bon
+3560070825493,Fusilli Blé complet,a,a,False,90,Excellent,0.0,3.0,1525.0,kJ,360.0,0.4,0.0,13.0,6.0,0.0,0,0,0,0,0,A,A,Excellent
+8001250120076,Linguine n° 7,a,b,False,90,Excellent,0.0,3.4,1493.0,kJ,352.0,0.3,0.004,13.0,2.9,0.0,0,0,0,0,0,A,A,Bon
+3478820043625,Spaghetti au Quinoa Tomate,a,b,True,100,Excellent,0.0,2.5,1551.0,kJ,366.0,0.25,0.0068,11.0,4.5,0.0,0,0,0,0,0,A,B,Bon
+3240931546353,Tagliatelles aux œufs frais,a,b,False,90,Excellent,0.0,3.4,1189.0,kJ,281.0,0.6,0.02,10.0,2.3,0.0,0,0,0,0,0,A,B,Bon
+8001250120342,Fusilli n°34,a,b,False,90,Excellent,0.0,3.4,1493.0,kJ,351.0,0.3,0.0,14.0,2.9,0.0,0,0,0,0,0,A,A,Bon
+8076809545488,Coquillettes sans gluten,a,b,False,49,Mediocre,0.0,0.6,363.0,kcal,363.0,0.7,0.0008,6.9,1.7,0.0,1,0,0,0,1,C,D,Mauvais
+3252971585858,Les Crozets Nature,a,a,False,90,Excellent,0.0,2.0,1546.0,kJ,365.0,0.8,0.1,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8008343200660,Penne Rigate N°66,a,b,False,90,Excellent,0.0,3.1,1510.0,kJ,356.0,0.3,0.002,14.5,2.9,0.0,0,0,0,0,0,A,A,Bon
+3564707000109,Torsades complètes,a,a,True,100,Excellent,0.0,3.5,1463.0,kJ,336.0,0.1,0.012,14.0,6.8,0.0,0,0,0,0,0,A,A,Excellent
+8076808060654,Farfalle,a,b,False,90,Excellent,0.0,3.5,1502.0,kJ,359.0,0.5,0.004,12.5,3.0,0.0,0,0,0,0,0,A,B,Bon
+3252971341003,Avoines,a,a,False,90,Excellent,0.0,2.0,1526.0,kJ,360.0,0.3,0.004,12.0,3.0,0.0,0,0,0,0,0,A,A,Excellent
+3038350013101,Macaroni,a,b,False,90,Excellent,0.0,3.7,1531.0,kJ,361.0,0.4,0.0,12.0,3.6,0.0,0,0,0,0,0,A,B,Bon
+3038350023605,Torti 1 kg,a,b,False,90,Excellent,0.0,3.7,1531.0,kJ,361.0,0.4,0.0,12.0,3.6,0.0,0,0,0,0,0,A,B,Bon
+3760020509316,Tire-bouchons semi-complets,a,b,True,100,excellent,0.0,3.6,1515.0,kJ,357.0,0.3,0.008,12.3,4.9,0.0,0,0,0,0,0,A,B,Bon
+20114992,Spaghetti Bio,a,a,True,100,excellent,0.0,3.2,1483.0,kJ,350.0,0.3,0.0,12.0,3.5,0.0,0,0,0,0,0,A,A,Excellent
+3564707164511,Spaghettis complets,a,a,True,100,excellent,0.0,3.5,344.0,kcal,344.0,0.1,0.012,14.0,6.8,0.0,0,0,0,0,0,A,A,Excellent
+20115005,Bio Fusilli,a,b,True,100,excellent,0.0,3.2,1483.0,kJ,350.0,0.3,0.0,12.0,3.5,0.0,0,0,0,0,0,A,A,Excellent
+3270190156222,Spaghetti semi-complets,a,a,True,100,excellent,0.0,3.5,1455.0,kJ,343.0,0.1,0.012,13.0,4.6,0.0,0,0,0,0,0,A,A,Excellent
+3760020509293,Coquillettes semi-complètes,a,b,True,100,excellent,0.0,3.6,1512.0,kJ,357.0,0.3,0.008,12.3,4.9,0.0,0,0,0,0,0,A,B,Bon
+3564707103237,Penne Rigate,a,b,True,100,excellent,0.0,3.5,1504.0,kJ,355.0,0.1,0.0,12.0,2.5,0.0,0,0,0,0,0,A,A,Excellent
+3596710516001,Fusilli au blé complet,a,b,True,100,excellent,0.0,3.5,1451.0,kJ,343.0,0.5,0.004,12.0,8.0,0.0,0,0,0,0,0,A,B,Bon
+3564707000093,Coquillettes Bio,a,b,True,100,excellent,0.0,3.5,1504.0,kJ,,0.1,0.0,12.0,2.5,0.0,0,0,0,0,0,A,A,Excellent
+3564707164474,Bio village,a,b,True,100,excellent,0.0,3.5,335.0,kcal,335.0,0.1,0.012,12.0,2.5,,0,0,0,0,0,A,B,Bon
+3478820003643,spaghetti au quinoa curry curcuma,a,b,True,100,excellent,0.0,2.0,1524.0,kJ,360.0,0.0,0.0,11.0,6.4,0.0,0,0,0,0,0,A,A,Excellent
+3760020509491,Ravioli de légumes,a,a,True,88,excellent,48.53828125,3.0,319.0,kJ,76.0,0.2,0.26,2.3,1.4,48.53828125,0,0,0,0,0,A,A,Excellent
+3252970006170,Avoine Bio de France,a,b,True,100,excellent,0.0,2.5,348.0,kcal,348.0,0.3,0.0,11.0,3.0,0.0,0,0,0,0,0,A,A,Excellent
+8076809570664,Barilla pates coquillettes bio 500g,a,a,True,100,excellent,0.0,3.5,1521.0,kJ,359.0,0.5,0.0,12.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8003740125363,Fusilli 36,a,b,True,100,excellent,0.0,3.5,1451.0,kJ,343.0,0.5,0.004,12.0,8.0,0.0,0,0,0,0,0,A,B,Bon
+3250392066192,Raviolis aux légumes BIO 675g (bocal),a,a,True,94,excellent,42.87563477,3.7,303.0,kJ,72.0,0.2,0.32,2.1,2.1,42.87563477,0,0,0,0,0,A,A,Excellent
+26022314,Spaghetti,a,b,True,100,excellent,0.0,1.4,167.0,kcal,167.0,0.2,0.004,5.0,0.0,0.0,0,0,0,0,0,A,A,Excellent
+8032891769249,Spaghetti semi-complet,a,a,True,100,excellent,0.0,5.5,361.0,kcal,361.0,0.4,0.02,11.8,4.7,0.0,0,0,0,0,0,A,B,Bon
+3270190127833,Spaghetti,a,b,True,100,excellent,0.0,3.5,354.0,kcal,354.0,0.0,0.0,12.0,2.5,0.0,0,0,0,0,0,A,A,Excellent
+4056489362449,Bio Spaghetti blé complet,a,b,True,100,excellent,0.0,4.0,1407.0,kJ,336.0,0.5,0.012,12.0,11.0,0.0,0,0,0,0,0,A,B,Bon
+3564707000086,Spaghettis,a,b,True,100,excellent,0.0,3.5,1504.0,kJ,355.0,0.1,0.012,12.0,2.5,0.0,0,0,0,0,0,A,B,Bon
+3380390175524,Spirales 3 couleurs blé & quinoa,a,b,True,100,excellent,5.0,3.0,1488.0,kJ,,0.4,0.004,10.8,2.8,5.0,0,0,0,0,0,A,B,Bon
+3560071251864,Fusilli au blé complet,a,b,True,100,excellent,0.0,3.0,360.0,kcal,360.0,0.400000006,0.0,13.0,6.0,0.0,0,0,0,0,0,A,A,Excellent
+3760103149415,Vermicelles thaïs de riz,a,b,True,100,excellent,0.0,0.0,1525.0,kJ,359.0,0.6,0.0,6.6,2.2,0.0,0,0,0,0,0,A,A,Excellent
+3456300002515,Bons Tuyaux Semi-complets,a,b,True,100,excellent,0.0,3.6,1515.0,kJ,357.0,0.3,0.008,12.3,4.9,0.0,0,0,0,0,0,A,B,Bon
+4056489705314,"Mezzelune butternut squash, ricotta & mascarpone",a,c,False,90,excellent,85.2,6.9,214.0,kcal,214.0,1.6,0.244,7.4,3.2,85.2,0,0,0,1,1,A,C,Médiocre
+8480000063632,Estrellas,a,b,False,90,excellent,0.0,3.5,1531.0,kJ,366.0,0.3,0.016,12.0,4.0,0.0,0,0,0,0,0,A,B,Bon
+8480000062383,Hélices. Pasta Alimenticia De Calidad Superior,a,b,False,90,excellent,0.0,3.6,1510.0,kJ,361.0,0.3,0.004,13.0,3.5,0.0,0,0,0,0,0,A,A,Bon
+8032891769492,Spirale complète d'épeautre de Tartarie Bio,a,a,False,100,Excellent,0.0,3.5,344.0,kcal,344.0,0.6,0.004,11.5,5.8,0.0,0,0,0,0,0,A,B,Bon
+3259011215430,Farfalle riz brun,a,b,False,100,Excellent,0.0,0.0,1533.0,kJ,366.0,0.8,0.004,8.8,3.5,0.0,0,0,0,0,0,A,A,Bon
+3245390065926,Crozet de Savoie,a,b,False,90,Excellent,0.0,2.5,1550.0,kJ,366.0,0.8,0.1,13.0,3.5,0.0,0,0,0,0,0,A,B,Bon
+3038356507604,Panzani Cous Cous Paste Fainoase,a,a,False,90,Excellent,,3.0,1528.0,kJ,365.0,0.4,0.008,12.0,3.4,,0,0,0,0,0,A,B,Bon
+3256220298896,Farfalle qualité supérieure,a,b,False,90,Excellent,0.0,3.0,1500.0,kJ,354.0,0.3,0.008,12.0,3.5,0.0,0,0,0,0,0,A,B,Bon
+8005709100084,Spaghetti,a,b,False,90,Excellent,0.0,3.2,1501.0,kJ,354.0,0.3,0.002,14.0,2.7,0.0,0,0,0,0,0,A,A,Bon
+5054781025276,Wholewheat Penne Pasta,a,b,False,90,Excellent,0.0,0.5,621.0,kJ,147.0,0.2,0.004,4.8,3.7,0.0,0,0,0,0,0,A,A,Bon
+4088600132037,wholewheat spaghetti,a,b,False,90,Excellent,0.0,1.5,662.0,kJ,,0.2,0.004,5.5,3.8,0.0,0,0,0,0,0,A,A,Bon
+8004690053195,Rigatoni,a,b,False,90,Excellent,0.0,4.0,351.0,kcal,351.0,0.3,0.0,14.0,3.0,0.0,0,0,0,0,0,A,A,Bon
+8480000063267,Macarrón,a,b,False,90,Excellent,0.0,3.5,1550.0,kJ,366.0,0.3,0.016,12.0,4.0,0.0,0,0,0,0,0,A,B,Bon
+3073190101069,Macaroni aux œufs frais,a,a,False,90,Excellent,0.0,4.5,374.0,kcal,374.0,0.8,0.008,14.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8005709104952,Fusilli,a,b,False,90,Excellent,0.0,3.2,1501.0,kJ,354.0,0.3,0.002,14.0,2.7,0.0,0,0,0,0,0,A,A,Bon
+20086497,Macaroni,a,b,False,90,Excellent,0.0,3.2,1483.0,kJ,350.0,0.3,0.0,12.5,3.5,0.0,0,0,0,0,0,A,A,Bon
+3250391968947,Crozets de Savoie au Sarrasin - Itinéraire des Saveurs,a,b,False,90,Excellent,0.0,0.5,603.0,kJ,,0.3,0.036,5.3,1.4,0.0,0,0,0,0,0,A,A,Bon
+8076800315097,N-Bucatini n°9,a,b,False,90,Excellent,0.0,1.0,1487.0,kJ,355.4015,0.3,0.002,12.5,3.0,0.0,0,0,0,0,0,A,A,Bon
+3660861021490,"Farfalles, Al dente en 3 minutes",a,b,False,90,Excellent,0.0,6.0,355.0,kcal,355.0,0.3,0.008,13.0,3.0,0.0,0,0,0,0,0,A,B,Bon
+8005709200128,chitarra,a,b,False,90,Excellent,0.0,3.2,354.0,kcal,354.0,0.3,0.002,13.5,0.0,,0,0,0,0,0,A,A,Bon
+3564700680667,Cannelloni à Farcir,a,b,False,90,Excellent,0.0,2.0,1536.0,kJ,,0.4,0.0,12.5,2.6,0.0,0,0,0,0,0,A,B,Bon
+3564700769034,Coudes rayés,a,b,False,90,Excellent,0.0,3.5,1518.0,kJ,348.0,0.1,0.0,12.0,3.0,0.0,0,0,0,0,0,A,A,Bon
+8004690611517,Spaghetto quadrato,a,b,False,90,Excellent,0.0,3.3,353.0,kcal,353.0,0.3,0.032,15.0,8.0,0.0,0,0,0,0,0,A,A,Bon
+3248830770718,"Nouilles à la Chinoise au Poulet, légumes croquants",a,e,False,84,Excellent,5.1,2.2,430.0,kJ,102.0,0.4,0.268,5.0,1.8,5.1,0,0,0,0,0,A,B,Mauvais
+3248830001645,Nouilles à la chinoise au poulet,a,e,,84,Excellent,55.3,3.4,515.0,kJ,122.0,0.4,0.312,7.3,1.9,55.3,0,0,0,0,0,A,B,Mauvais
+8017596071859,Fusilli mais e riso,a,e,,49,Mediocre,0.0,0.6,1523.0,kJ,359.0,0.3,0.092,6.5,2.0,0.0,1,0,0,0,1,C,D,Mauvais
+3222477067356,Tagliatelles recette aux oeufs frais,a,e,,90,Excellent,0.0,0.0,1161.0,kJ,274.0,0.7,0.02,10.0,2.3,0.0,0,0,0,0,0,A,B,Mauvais
+8001665714372,Tortellini ricotta & épinards,b,c,False,78,Excellent,20.01367188,5.6,1081.0,kJ,257.0,2.5,0.44,9.0,5.5,20.01367188,0,0,0,0,0,A,C,Médiocre
+3038352880305,"Le Ravioli, Pur Bœuf",b,b,False,75,Excellent,8.653846154,1.4,91.0,kcal,91.0,0.8,0.34,3.8,1.6,8.653846154,0,0,0,1,1,A,C,Bon
+3038352880206,Ravioli pur bœuf sans colorant ni conservateur,b,b,False,75,Excellent,17.1875,1.4,384.0,kJ,91.0,0.8,0.34,3.8,1.6,17.1875,0,0,0,1,1,A,C,Bon
+3229820181363,Ramen soja caramel,b,b,False,54,Bon,0.2175,2.5,692.0,kJ,163.0,0.1,0.6,5.3,1.7,0.2175,0,0,2,3,5,C,D,Mauvais
+3248832960209,Penne au Poulet et au Pesto,b,d,False,84,Excellent,24.99166667,1.6,778.0,kJ,186.0,1.5,0.26,8.0,1.2,24.99166667,0,0,0,0,0,A,B,Médiocre
+3240930116120,Ravioli boeuf,b,e,False,75,Excellent,13.55,4.2,1109.0,kJ,263.0,2.0,0.44,9.7,2.3,13.55,0,0,0,0,0,A,C,Mauvais
+3240931545356,Tortellini basilic parmesan 250g,b,c,False,72,Bon,6.5,2.4,1198.0,kJ,286.0,3.4,0.4,10.0,2.9,6.5,0,0,0,0,0,A,C,Médiocre
+8001665705417,Ravioli bio au blé complet épinards ricotta burrata,b,a,True,85,Excellent,19.0,4.1,1064.0,kJ,254.0,2.6,0.384,9.9,3.7,19.0,0,0,0,0,0,A,C,Bon
+3270160867431,"Ravioli ricotta épinard, sauce à la tomate",b,b,False,78,Excellent,52.73125,4.0,121.0,kcal,121.0,1.9,0.32,5.4,1.8,52.73125,0,0,0,1,1,A,D,Mauvais
+4002359752100,Vermicelles,b,c,False,78,Bon,0.0,0.8,453.0,kJ,107.0,0.1,0.004,0.5,1.4,0.0,0,0,0,0,0,A,A,Mauvais
+3038352880909,Le Ravioli Bolognaise sans conservateur,b,c,False,72,Bon,11.47403846,1.9,433.0,kJ,103.0,1.7,0.34,4.5,1.3,11.47403846,0,0,0,1,1,A,C,Médiocre
+3021690011050,Ravioli 6 légumes,b,b,False,75,Excellent,34.35,2.3,316.0,kJ,75.0,0.5,0.308,2.7,1.8,34.35,0,0,0,0,0,A,B,Bon
+3564707101981,Ravioli Ricotta Epinards,b,a,True,85,Excellent,11.0,2.8,1031.0,kJ,244.0,2.0,0.56,8.6,3.4,11.0,0,0,0,0,0,A,B,Bon
+3021690029093,Ravioli pur boeuf français,b,b,False,75,Excellent,42.95,1.9,391.0,kJ,84.0,0.8,0.34,3.7,1.1,42.95,0,0,0,0,0,A,B,Bon
+5905279248069,Gyoza poulet,b,c,False,72,Bon,41.88928223,1.7,712.0,kJ,170.0,1.1,0.44,7.6,1.9,41.88928223,0,0,0,0,0,A,B,Médiocre
+20263812,Ravioli Pur Bœuf,b,b,False,69,Bon,12.478125,1.4,91.0,kcal,91.0,0.8,0.34,3.8,0.8,12.478125,0,0,1,1,2,A,C,Bon
+3240931545066,Gnocchi à poêler,b,b,False,75,Excellent,6.375,1.5,801.0,kJ,190.0,0.3,0.44,5.0,2.6,6.375,0,0,0,1,1,A,B,Bon
+3242272251354,Tortellini chèvre sauce tomate,b,c,False,75,Excellent,17.30179398,1.7,674.0,kJ,161.0,2.5,0.28,6.1,2.5,17.30179398,0,0,0,0,0,A,B,Médiocre
+5410028120126,Chinese Eiermie,b,b,False,75,Excellent,0.0,2.3,1517.0,kJ,358.0,0.7,0.368,12.5,2.5,0.0,0,0,0,1,1,A,C,Bon
+3240931545332,Girasoli cèpes parmesan,b,b,False,72,Bon,21.7,7.1,1048.0,kJ,249.0,2.6,0.44,8.1,2.9,21.7,0,0,0,0,0,A,C,Bon
+336789,Spinach Ricotta Tortelloni,b,c,False,66,Bon,13.5,1.4,758.0,kJ,161.0,1.1,0.14,6.3,1.7,13.5,0,0,1,0,1,A,C,Médiocre
+3564700318621,Ravioli Bœuf et Oignons,b,c,False,66,Bon,2.7,5.4,1091.0,kJ,259.0,1.9,0.336,11.0,1.8,2.7,0,0,1,0,1,A,D,Mauvais
+3281780897081,Salade Tokyo,b,b,False,54,Bon,45.83125,4.9,569.0,kJ,136.0,0.7,0.48,4.8,3.1,45.83125,0,1,1,1,3,C,D,Mauvais
+3270160570614,"Cannelloni ricotta, épinards",b,c,False,69,Bon,13.82109375,2.8,138.0,kcal,138.0,3.6,0.2,6.6,1.2,13.82109375,0,0,1,1,2,B,D,Mauvais
+3180950015716,Spaetzle,b,b,False,72,Bon,0.395,0.5,744.0,kJ,174.0,0.7,0.316,6.0,,0.395,0,0,0,0,0,A,B,Bon
+3456300007992,Ravioli chèvre et ciboulette,b,a,True,82,excellent,39.9,4.9,366.0,kJ,87.0,0.6,0.216,3.0,1.8,39.9,0,0,0,0,0,A,B,Bon
+3021690029154,Ravioli pur boeuf,b,a,True,100,excellent,28.99,1.0,87.0,kcal,87.0,0.5,0.256,3.5,1.9,28.99,0,0,0,0,0,A,A,Excellent
+7610848004028,Bio Knöpfli,b,b,True,85,excellent,10.3125,2.5,659.0,kJ,156.0,0.6,0.372,6.0,1.4,10.3125,0,0,0,0,0,A,B,Bon
+3564707135481,Ravioli bio emmental basilic,b,b,True,82,excellent,0.0,2.3,1117.0,kJ,265.0,2.7,0.52,9.3,3.0,0.0,0,0,0,0,0,A,C,Bon
+3350033750302,Ravioli Ricotta épinards,b,b,True,82,excellent,11.0625,2.1,1071.0,kJ,315.0,1.7,0.56,9.0,3.1,11.0625,0,0,0,0,0,A,B,Bon
+3266140061234,Ravioli champignons ail des ours,b,a,True,76,excellent,15.1,2.7,261.0,kcal,261.0,2.6,0.44,8.6,3.3,15.1,0,0,0,0,0,A,C,Bon
+3256228951656,Girasoli pesto basilic,b,c,True,67,bon,0.0,0.5,1157.0,kJ,276.0,2.8,0.48,10.0,3.3,0.0,0,0,0,1,1,A,D,Médiocre
+3700019520878,Nouilles de riz,b,d,True,82,excellent,0.0,0.0,1542.0,kJ,363.0,0.0,0.12,6.3,1.0,0.0,0,0,0,0,0,A,A,Mauvais
+3760020507800,Ravioli épinard ricotta Bio,b,a,True,79,excellent,40.72,4.6,375.0,kJ,89.0,1.1,0.256,2.7,1.7,40.72,0,0,0,0,0,A,B,Bon
+3245413942876,Ravioli bio carrefour emmental basilic,b,a,True,82,excellent,0.0,2.3,1117.0,kJ,265.0,2.7,0.52,9.3,3.0,0.0,0,0,0,0,0,A,C,Bon
+3493833100387,Ravioli au Bœuf Bio - 340 g,b,a,True,85,excellent,0.0,2.0,269.0,kJ,71.0,0.5,0.2,3.0,0.0,0.0,0,0,0,0,0,A,B,Bon
+3257982267397,Ravioli Ricotta Epinards,b,a,True,82,excellent,11.6,2.799999952,244.0,kcal,244.0,2.0,0.55999999,8.600000381,3.4,11.6,0,0,0,0,0,A,B,Bon
+3222473658503,Ravioli ricotta épinard BIO,b,a,True,94,excellent,10.0,1.4,1007.0,kJ,,2.4,0.264,8.6,2.0,10.0,0,0,0,0,0,A,C,Bon
+7610848552895,Gemüse spätzli,b,a,True,88,excellent,19.234375,1.8,656.0,kj,155.0,0.5,0.4,6.9,1.9,19.234375,0,0,0,0,0,A,B,Bon
+3760098459506,Gnocchi traditionnel à poêler BIO 300g,b,b,True,85,excellent,0.0,0.8,610.0,kJ,144.0,0.0,0.308,2.8,2.4,0.0,0,0,0,0,0,A,A,Excellent
+3250390287735,Farfalles,b,b,False,90,Excellent,0.0,6.3,1502.0,kJ,,0.3,0.004,10.8,0.0,0.0,0,0,0,0,0,A,A,Bon
+20163105,Hagebutte mit Hibiskus,b,b,False,90,Excellent,0.0,0.2,2.0,kcal,2.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,A,A,Bon
+3560071486587,Ravioli bolognaise,b,d,False,82,Excellent,11.5,2.2,108.0,kcal,108.0,1.6,0.4,5.3,1.1,11.5,0,0,0,0,0,A,B,Médiocre
+3021690023909,Ravioli pur Bœuf sauce tomate cuisinée,b,b,False,75,Excellent,32.72375,3.3,369.0,kJ,88.0,0.9,0.292,3.7,1.7,32.72375,0,0,0,0,0,A,C,Bon
+7610849657766,Lasagne alla bolognese,b,d,False,75,Excellent,5.201171875,0.9,136.0,kcal,136.0,2.6,0.4,9.8,1.5,5.201171875,0,0,0,0,0,A,B,Médiocre
+3564700005965,Ravioli Bolognaise (Riche en viande),b,b,False,75,Excellent,10.52634766,3.0,101.0,kcal,101.0,1.2,0.28,5.0,1.5,10.52634766,0,0,0,0,0,A,C,Bon
+3564700005941,"Ravioli (Pur Bœuf, Sauce à l'italienne)",b,c,False,75,Excellent,13.421875,2.7,86.0,kcal,86.0,0.8,0.28,4.0,1.5,13.421875,0,0,0,0,0,A,C,Médiocre
+3245413965547,Ravioli,b,b,False,75,Bon,11.921875,2.5,456.0,kJ,109.0,1.0,0.284,4.2,1.9,11.921875,0,0,0,0,0,A,C,Bon
+20263836,,b,c,False,75,Excellent,0.0,0.1,358.0,kcal,358.0,0.1,0.04,0.3,3.7,0.0,0,0,0,0,0,A,A,Mauvais
+3222475412431,Ravioli au fromage sauce tomate,b,c,False,72,Bon,8.046875,2.3,396.0,kj,94.0,1.3,0.308,3.5,1.7,8.046875,0,0,0,1,1,A,C,Médiocre
+3021690011104,Ravioli Bolognaise (Sauce Riche en Bœuf),b,b,False,72,Bon,39.96710526,3.2,100.0,kcal,100.0,1.5,0.3,4.4,1.7,39.96710526,0,0,0,0,0,A,C,Bon
+8853662006833,Nouilles Soba,b,b,False,72,Bon,0.0,0.0,2222.0,kJ,523.0,0.0,0.282,13.2,,0.0,0,0,0,0,0,A,A,Bon
+3021690011111,Ravioli Bolognaise (Sauce Riche en Bœuf) Format Familial,b,b,False,72,Bon,39.96710526,3.2,100.0,kcal,100.0,1.5,0.332,4.4,1.7,39.96710526,0,0,0,0,0,A,C,Bon
+7627535394898,"Mah Mee, au poulet",b,d,False,72,Bon,26.2920801,2.1,591.0,kJ,141.0,0.7,0.44,7.9,1.4,26.2920801,0,0,1,0,1,A,C,Médiocre
+3263851612311,Cannelloni Pur boeuf,b,d,False,69,Bon,15.820935,2.9,115.0,kcal,115.0,1.5,0.312,4.9,1.8,15.820935,0,0,1,0,1,A,C,Médiocre
+3263851612090,Cannelloni pur boeuf,b,d,False,69,Bon,16.425,3.0,127.0,kcal,127.0,1.7,0.36,5.0,,16.425,0,0,1,0,1,A,C,Médiocre
+3256222414225,Ravioli,b,c,False,69,Bon,21.9625,3.0,84.0,kcal,84.0,0.8,0.324,3.7,1.7,21.9625,0,0,1,2,3,A,C,Médiocre
+3270160492510,Cannelloni Bolognaise,b,d,False,66,Bon,31.85323822,1.7,123.0,kcal,123.0,3.1,0.296,7.2,1.9,31.85323822,0,0,1,1,2,B,C,Médiocre
+3261055861009,Ravioli Pur Boeuf - L'Assiette XXL - 350 g - Panzani,b,b,False,60,Bon,0.0,2.5,79.0,kcal,79.0,0.8,0.38,3.4,0.0,,0,0,2,1,3,A,D,Mauvais
+3250392299163,Ravioli bœuf aux oeufs frais,b,b,False,57,Bon,1.7,2.4,994.0,kJ,236.0,2.7,0.448,10.7,3.0,1.7,0,0,1,1,2,A,D,Mauvais
+27063460,Macaroni ‘tomato’,b,c,False,48,Médiocre,19.0,2.9,646.0,kJ,223.0,0.1,0.376,4.4,1.4,19.0,1,2,2,3,8,C,E,Mauvais
+3175681061941,Coquillettes sans gluten - Coquillettes,b,b,False,48,Médiocre,0.0,0.2,1547.0,kJ,365.0,1.0,0.1016,7.1,1.3,0.0,1,0,0,0,1,C,D,Mauvais
+8005121044089,Spaghetti Mais e Riso,b,b,False,48,Médiocre,0.0,0.55,1510.0,kJ,356.0,0.59,0.0012,6.2,1.65,0.0,0,0,0,0,0,A,A,Bon
+3560070708000,Ravioli Boeuf,b,b,False,45,Médiocre,4.0015625,2.0,259.0,kcal,259.0,2.9,0.344,8.4,2.5,4.0015625,1,0,1,0,2,C,D,Mauvais
+8852018101024,Instantnudeln - Chicken Flavour,c,d,False,36,Mediocre,2.3,0.3,332.0,kJ,80.0,1.8,0.316,1.2,,2.3,2,1,2,2,7,C,E,Mauvais
+3240931547138,Gnocchi a poeler extra fromage 285g,c,b,False,69,Bon,4.3,2.1,965.0,kJ,230.0,3.0,0.52,8.3,1.8,4.3,0,0,0,0,0,A,B,Bon
+8852018101017,YumYum - Beef Flavor,c,b,False,33,Mediocre,0.75,0.7,318.0,kJ,76.0,1.8,0.32,1.2,,0.75,2,2,2,4,10,C,E,Mauvais
+8410300349952,,c,c,False,3,Mauvais,0.0,0.452,1203.0,kJ,287.0,6.0,0.335,2.13,0.0323,0.0,1,0,3,5,9,C,E,Mauvais
+8852018101062,Nouilles Instantanées Légumes,c,d,False,36,Mediocre,0.026863445,3.2,2014.0,kJ,76.0,10.0,1.8,8.0,,0.026863445,9,1,3,2,15,E,E,Mauvais
+8008343201179,gnocchi di patate,c,a,False,54,Bon,0.0,0.1,666.0,kJ,159.0,0.1,0.56,5.0,1.6,0.0,0,1,0,1,2,A,D,Mauvais
+3038352881005,PZ RAVIOLI BOLO 800GR,c,b,False,72,Bon,11.60625,1.9,103.0,kcal,103.0,1.7,0.34,4.5,0.7,11.60625,0,0,0,1,1,A,C,Bon
+8852018101031,"Nouilles Instantanées, saveur Canard",c,d,False,36,Mediocre,0.550649007,1.1,365.0,kJ,87.0,1.7,0.5,1.5,,0.550649007,6,1,2,2,11,E,E,Mauvais
+3240931543390,Lustucru selection ravioli 4 fromages 305g,c,c,False,63,Bon,3.03,4.3,1097.0,kJ,261.0,3.1,0.352,9.9,1.9,3.03,0,0,1,0,1,A,D,Mauvais
+5000118203503,Pot Noodle Chicken & Mushroom,c,c,False,42,Mediocre,0.0,1.100000024,141.0,kcal,141.0,2.799999952,0.251999998,3.200000048,,0.0,1,0,4,6,11,C,E,Mauvais
+3240931540177,Lustucru gnocchi a poeler extra fromage maxi 500g,c,a,False,69,Bon,4.3,2.1,965.0,kJ,230.0,3.0,0.52,8.3,1.8,4.3,0,0,0,0,0,A,B,Bon
+8712429361106,Nissin Demae Ramen Spicy,c,d,False,36,Mediocre,1.022167969,0.6,382.0,kJ,91.0,2.0,0.4,1.9,,1.022167969,3,0,4,6,13,D,E,Mauvais
+8410300352280,,c,d,False,18,Mauvais,3.3,3.7,938.0,kJ,224.0,4.7,0.48,4.7,1.5,3.3,1,0,3,2,6,C,E,Mauvais
+8852018101079,Soupe de Nouilles Arôme Curry,c,c,False,36,Mediocre,0.003480911,0.6,73.0,kcal,73.0,1.4,0.00032,1.3,,0.003480911,7,1,3,1,12,E,E,Mauvais
+26037431,Pâtes fraîches champignons et mascarpone,c,b,False,69,Bon,23.575,6.9,286.0,kcal,286.0,1.9,0.3,9.8,,23.575,0,0,0,1,1,A,D,Mauvais
+8852018201021,YumYum Chicken Flavour,c,b,False,30,Mediocre,5.4,1.1,414.0,kJ,99.0,2.1,0.4,1.8,,5.4,5,1,3,1,10,E,E,Mauvais
+8006515610323,Ravioli tomates rôties et burrata,c,a,False,48,Mediocre,6.8,1.8,281.0,kcal,281.0,6.1,0.32,8.5,2.2,6.8,0,0,0,0,0,A,C,Bon
+8480000224538,Noodles sabor pollo,c,c,False,39,Mediocre,0.0,0.9,384.0,kJ,92.0,2.1,0.32,2.0,0.9,0.0,1,0,3,4,8,C,E,Mauvais
+3229820783031,Mian Tiao saveur boeuf - 85 g - Tien Shan,c,b,False,51,Bon,0.3,0.6,112.0,kcal,112.0,0.6,0.32,2.6,0.7,0.3,0,0,3,1,4,A,C,Bon
+2006050028757,Ravioli aux fromages,c,c,False,69,Bon,1.742011947,6.3,265.0,kcal,265.0,3.4,0.4,11.0,1.9,1.742011947,0,0,0,1,1,A,D,Mauvais
+8852018800019,Yum yum Thai coconut soup,c,b,False,16,Mauvais,1.7,2.0,437.0,kJ,104.0,2.5,0.8,1.5,,1.7,8,1,4,3,16,E,E,Mauvais
+8001665712798,GRANDI GIRASOLI GORGONZOLA ET NOIX RANA,c,c,False,54,Bon,7.0,3.5,315.0,kcal,315.0,5.5,0.48,12.0,5.7,7.0,0,0,0,0,0,A,C,Médiocre
+3245411400712,Ravioli 4 fromages,c,c,False,51,Bon,0.457477679,3.3,1141.0,kJ,271.0,3.4,0.4,11.0,2.2,0.457477679,0,0,0,0,0,A,C,Médiocre
+8001665712866,"Grandi Girasoli - Ricotta, Epinards & Mascarpone",c,b,False,60,Bon,10.0,3.8,237.0,kcal,237.0,4.1,0.56,11.0,5.2,10.0,0,0,0,0,0,A,B,Bon
+6091091000189,Nouilles Instantanées - Saveur Crevettes,c,c,False,45,Mediocre,11.45,1.1,397.0,kJ,95.0,1.6,0.28,2.2,0.9,11.45,3,1,2,1,7,C,E,Mauvais
+20969233,,c,b,False,75,Excellent,35.0,3.1,909.0,kJ,216.0,0.7,0.528,6.3,,35.0,0,0,1,0,1,A,D,Mauvais
+3240931544342,Lustucru gnocchi a poeler extra fromage xxl 650g,c,a,False,69,Bon,4.3,2.1,965.0,kJ,230.0,3.0,0.52,8.3,1.8,4.3,0,0,0,0,0,A,B,Bon
+3270160812196,"Ravioli aux Cèpes, sauce au Parmigiano Reggiano",c,b,False,66,Bon,7.8,2.3,725.0,kJ,174.0,6.2,0.252,7.2,2.1,7.8,0,0,0,2,2,C,C,Bon
+3266140059842,Les ravioles à poêler,c,a,True,70,bon,21.0,1.5,203.0,kcal,203.0,3.1,0.44,7.8,1.9,21.0,0,0,1,1,2,B,D,Mauvais
+3266140059125,Gnocchi BIO à poêler sachet,c,b,True,79,excellent,0.0,1.3,912.0,kJ,216.0,0.4,0.4,5.9,,0.0,0,0,0,0,0,A,B,Bon
+3478820031486,Ravioli Bœuf Bio,c,a,True,79,excellent,39.68159744,4.0,355.0,kJ,84.0,0.5,0.4,3.2,1.6,39.68159744,0,0,0,0,0,A,B,Bon
+3307130602553,Ravioli Volaille,c,a,True,79,excellent,39.5375,4.6,356.0,kJ,85.0,0.2,0.28,3.0,1.3,39.5375,0,0,0,0,0,A,A,Excellent
+3245413942814,Ravioli Épinards Ricotta,c,a,True,61,bon,11.6,1.9,252.0,kcal,252.0,2.5,0.56,11.0,2.6,11.6,0,0,0,0,0,A,B,Bon
+3335880006512,Ravioli Légumes sauce Toscane,c,a,True,85,excellent,23.82,2.6,349.0,kJ,83.0,0.4,0.328,2.4,0.0,23.82,0,0,0,0,0,A,B,Bon
+3222476101457,Raviolis au boeuf BIO,c,a,True,79,excellent,19.94,3.2,490.0,kJ,117.0,1.1,0.368,4.1,1.5,19.94,0,0,0,0,0,A,C,Bon
+3564707086646,Ravioli bio aux 3 fromages,c,a,True,58,bon,0.0,3.5,1210.0,kJ,287.0,4.3,0.48,13.0,2.4,0.0,0,0,0,0,0,A,C,Bon
+8022230010002,Tortelloni Ricotta e spinaci,c,a,True,58,bon,9.043945313,2.8,254.0,kcal,254.0,2.8,0.76,8.5,3.3,9.043945313,0,0,0,1,1,A,D,Mauvais
+3760098459124,"Ravioles fromages, ail & fines herbes BIO 250g",c,a,True,58,bon,5.0,1.2,1168.0,kJ,278.0,5.4,0.276,11.4,1.8,5.0,0,0,0,0,0,A,B,Bon
+3596710484287,Ravioli fromages bio,c,a,True,48,médiocre,0.0,1.2,1161.0,kJ,275.0,3.9,0.52,12.0,2.4,0.0,0,0,0,0,0,A,C,Bon
+3335880006413,Raviolis légumes sauce Toscane,c,a,True,79,excellent,23.82,2.6,83.0,kcal,83.0,0.4,0.328,2.4,0.0,23.82,0,0,0,0,0,A,B,Bon
+8005658018980,Quadrotti gorgonzola e noci,c,b,True,33,médiocre,0.0,0.8,261.0,kcal,261.0,4.5,0.44,12.0,1.4,0.0,0,1,0,0,1,A,D,Mauvais
+3596710484270,Ravioli légumes du soleil bio,c,a,True,79,excellent,18.0,3.3,1065.0,kJ,252.0,0.8,0.6,7.2,2.3,18.0,0,0,0,0,0,A,C,Bon
+3456300012255,Ravioli chèvre ciboulette,c,a,True,76,excellent,37.6,4.7,103.0,kcal,103.0,1.2,0.212,3.1,0.5,37.6,0,0,0,0,0,A,B,Bon
+3350033289284,"Ravioli épinards ricotta, sauce basilic et parmesan bio",c,a,True,67,bon,29.69,0.5,648.0,kJ,155.0,2.1,0.484,4.3,1.9,29.69,0,0,1,0,1,A,D,Mauvais
+3250392254469,Ravioli 3 fromages bio 250g,c,a,True,58,bon,0.0,1.7,1199.0,kJ,285.0,5.8,0.412,13.0,2.2,0.0,0,0,0,0,0,A,C,Bon
+3222476859853,Ravioli épinard ricotta sauce basilic,c,a,True,67,bon,21.075,0.5,648.0,kJ,155.0,2.1,0.48,4.3,1.9,21.075,0,0,1,0,1,A,D,Mauvais
+3266191057071,Tortilliez cèpes,c,b,True,79,excellent,9.0,1.9,287.0,kcal,287.0,2.4,0.3,9.0,0.0,9.0,0,0,0,0,0,A,C,Bon
+3052420350019,Spaetzle bio,c,b,True,79,excellent,0.0,0.4,185.0,kcal,185.0,1.0,0.44,5.8,0.0,0.0,0,0,0,1,1,A,D,Mauvais
+3266140055127,Ravioli emmental & basilic,c,a,True,73,bon,0.0,2.3,265.0,kcal,265.0,2.7,0.52,9.3,0.0,0.0,0,0,0,1,1,A,D,Mauvais
+3256223660225,Ravioli aux légumes Bio,c,a,True,76,excellent,35.21800781,3.5,372.0,kJ,,0.1,0.52,2.5,1.2,35.21800781,0,0,0,0,0,A,D,Mauvais
+3350030105822,Ravioli 4 fromages,c,b,True,73,bon,0.0,2.5,1165.0,kJ,,4.3,0.324,13.0,1.6,0.0,0,0,0,1,1,A,D,Mauvais
+3431590012857,Ravioli Ricotta & Epinards,c,a,True,79,excellent,44.3,2.1,99.0,kcal,99.0,1.6,0.4,2.5,1.3,44.3,0,0,0,0,0,A,B,Bon
+8006090001301,Polenta Valtellinese,c,b,False,90,Excellent,0.0,0.879999995,340.0,kcal,340.0,0.349999994,0.4,8.699999809,,0.0,0,0,0,0,0,A,B,Bon
+7624841620086,Gnocchi de patate,c,b,False,69,Bon,0.5,2.5,598.0,kJ,141.0,0.2,0.44,2.7,1.5,0.5,0,0,0,0,0,A,B,Bon
+434966,"Spinach, Ricotta & Lemon Girasoli",c,a,False,69,Bon,10.5,1.8,218.0,kcal,218.0,4.8,0.344,7.1,2.2,10.5,0,0,0,0,0,A,B,Bon
+3229820803319,Kit bo bun,c,c,False,66,Bon,2.376552582,7.4,638.0,kJ,153.0,0.9,0.8,3.7,1.4,2.376552582,0,0,1,5,6,C,E,Mauvais
+7610227940602,Macaronis à la montagnarde,c,c,False,63,Bon,6.465,1.2,139.0,kcal,139.0,3.1,0.372,4.7,1.2,6.465,0,0,0,0,0,A,B,Médiocre
+3760019700229,Mezzaluna quatre fromages,c,c,False,60,Bon,0.0,3.9,1046.0,kJ,253.0,4.0,0.44,9.9,1.1,0.0,0,0,1,2,3,C,E,Mauvais
+8720812770114,Volcano Blast Flavour,c,c,False,39,Médiocre,0.507834473,3.8,1443.0,kJ,345.0,0.4,0.292,7.5,0.0,0.507834473,5,1,4,4,14,E,E,Mauvais
+21227080,Pastasalat Penne mit Feta und Paprika,c,b,False,39,Médiocre,6.365885417,4.3,763.0,kJ,182.0,2.1,0.52,5.2,1.5,6.365885417,0,1,1,0,2,C,D,Mauvais
+20070755,Beef Lasagne with beef and merlot ragu sauce,c,d,False,39,Médiocre,11.47857143,1.4,197.0,kcal,197.0,5.8,0.304,9.0,2.1,11.47857143,3,0,3,5,11,D,E,Mauvais
+4061461821623,Tasty noodles teriyaki,c,c,False,36,Médiocre,1.745449219,2.7,474.0,kJ,113.0,2.0,0.348,2.2,,1.745449219,1,0,1,1,3,C,E,Mauvais
+3036815444699,Daisuki,c,b,False,36,Médiocre,0.0,0.6,95.0,kcal,95.0,1.9,0.304,2.0,0.1,,1,0,3,4,8,C,E,Mauvais
+8410069180049,Ravioli Quesos,c,c,False,30,Médiocre,0.0,2.4,1028.0,kJ,244.0,3.4,0.52,10.0,4.9,0.0,3,0,1,1,5,C,E,Mauvais
+4002359671135,Nouilles en pot saveur poulet curry Suzi Wan 62 g,c,e,,60,Bon,3.6175,0.8,109.0,kcal,109.0,2.1,0.232,2.7,0.9,3.6175,0,0,1,1,2,A,D,Mauvais
+3222472572947,Nouilles style chinoises aux œufs,c,e,,69,bon,0.0,3.5,1517.0,kJ,358.0,0.7,0.368,12.5,0.0,0.0,0,0,0,1,1,A,D,Mauvais
+5997523313111,Soba classic,d,c,False,7,Mauvais,9.06181891,4.4,206.0,kcal,206.0,3.6,0.76,5.9,0.0,9.06181891,4,0,3,3,10,E,E,Mauvais
+5997523313159,,d,d,False,4,Mauvais,11.57552083,4.9,897.0,kJ,214.0,4.4,0.92,5.0,,11.57552083,2,0,3,4,9,C,E,Mauvais
+3166352940054,"Tagliatelles au Poulet 🐔, Champignons🍄Crème",d,e,False,75,Excellent,46.43125,3.3,1291.0,kJ,306.0,2.7,0.84,23.0,2.7,46.43125,0,0,0,0,0,A,C,Mauvais
+3266140062132,Ravioles du Dauphiné LABEL ROUGE IGP Lot de,d,b,False,35,Mediocre,0.0,1.5,1195.0,kJ,285.0,8.1,0.6,13.0,2.5,0.0,0,0,0,0,0,A,B,Bon
+8410300352327,Yakisoba classic gourmet oriental,d,c,False,27,Mediocre,4.0,1.9,966.0,kJ,231.0,4.8,0.4,4.1,1.7,4.0,1,0,3,4,8,C,E,Mauvais
+5997523324315,Soba Wok Style Terriyaki,d,c,False,9,Mauvais,3.967708333,3.3,847.0,kJ,202.0,4.1,0.64,4.4,,3.967708333,2,0,4,2,8,C,E,Mauvais
+3564709015125,Raviolis du Dauphiné,d,b,False,32,Mediocre,0.0,1.8,290.0,kcal,290.0,7.3,0.64,14.0,0.8,0.0,0,0,0,0,0,A,C,Bon
+5901384506575,Yakisoba soja classique,d,b,False,8,Mauvais,0.0,3.1,241.0,kcal,241.0,5.4,0.56,4.2,,0.0,1,0,3,4,8,C,E,Mauvais
+3701002405455,ravioles,d,b,False,34,Mediocre,7.85,1.5,285.0,kcal,285.0,8.1,0.6,13.0,2.5,7.85,0,0,0,0,0,A,B,Bon
+3154230805342,Pâte feuilleté Trésor de Grand Mère,d,c,False,32,Mediocre,0.55,1.6,1625.0,kj,389.0,14.0,0.44,7.2,1.0,0.55,0,0,0,0,0,A,D,Mauvais
+5000118203497,Pot Noodle Beef And Tomato,d,d,False,39,Mediocre,18.0,1.4,143.0,kcal,143.0,2.8,0.22,3.5,1.3,18.0,1,0,3,3,7,C,E,Mauvais
+3266140051600,Ravioles du Dauphiné surgelées,d,b,False,33,Mediocre,0.0,1.9,280.0,kcal,280.0,7.6,0.56,13.0,,0.0,0,0,0,0,0,A,C,Bon
+3256225148578,Nouilles cuisinées cup saveur boeuf,d,b,False,7,Mauvais,0.088887533,5.4,1954.0,kJ,467.0,4.8,2.12,7.9,2.5,0.088887533,0,0,4,4,8,C,E,Mauvais
+8001020110016,Ravioli met ricotta en spinazie,d,c,False,31,Mediocre,70.0,5.1,1090.0,kj,260.0,8.7,0.6,9.0,0.0,70.0,0,0,0,0,0,C,C,Médiocre
+3596710214716,Ravioles du DauphinéAux œufs frais,d,b,False,34,Mediocre,2.0,1.8,1203.0,kJ,287.0,7.5,0.68,14.0,1.4,2.0,0,0,0,0,0,A,C,Bon
+3256225148813,Nouilles cuisinées cup saveur poulet,d,b,False,8,Mauvais,0.087890625,3.4,1941.0,kJ,463.0,4.7,1.96,8.3,2.5,0.087890625,0,0,4,3,7,C,E,Mauvais
+3250391110483,Ravioles du dauphiné label rouge igp,d,c,False,33,Mediocre,4.0,1.6,285.0,kcal,285.0,7.4,0.664,13.9,0.0,4.0,0,0,0,0,0,A,B,Médiocre
+5000118203534,Chinese Chow Mein Noodles,d,c,False,34,Mediocre,7.3625,1.21,411.0,kcal,411.0,1.7,0.232,3.05,0.82,7.3625,1,0,3,5,9,C,E,Mauvais
+8001665713153,Ravioli 4 Formaggi,d,c,False,90,Excellent,0.8671875,3.7,1280.0,kJ,298.0,5.1,1.3,12.0,5.0,0.8671875,0,0,0,0,0,C,C,Médiocre
+8005658008233,Ravioli au bœuf braisé,d,b,False,8,Mauvais,2.197281746,1.0,273.0,kcal,273.0,3.4,0.56,15.0,,2.197281746,1,1,1,0,3,C,E,Mauvais
+3266140061814,Pates fraiches au fromage Bousin ail & fines herbes,d,b,False,38,Mediocre,0.0,1.8,1125.0,kJ,268.0,6.2,0.56,10.0,3.0,0.0,0,0,0,1,1,A,D,Mauvais
+3396410037451,Ravioli Fromages et Basilic,d,a,True,79,excellent,1.754166667,2.6,1134.0,kJ,269.0,4.1,0.44,11.0,0.0,1.754166667,0,0,0,0,0,A,C,Bon
+8022230010606,RAVIOLIS AU PARMESAN,d,c,True,48,médiocre,0.15625,2.6,253.0,kcal,253.0,4.0,0.72,12.0,1.1,0.15625,0,0,0,1,1,A,D,Médiocre
+3329489600035,Pennes blanches,d,b,True,49,médiocre,,0.0,358.0,kcal,358.0,0.2,1.2,0.01,3.0,,0,0,0,0,0,A,A,Excellent
+8009915002064,Conchiglie di mais,d,b,False,84,Excellent,0.0,0.6,355.0,kcal,355.0,14.0,0.012,6.45,2.0,0.0,0,0,0,0,0,A,B,Bon
+3760019700205,Mezzaluna Ricotta e Spinaci,d,b,False,42,Médiocre,5.0,5.1,1022.0,kJ,242.0,2.5,0.548,9.3,1.2,5.0,0,0,1,1,2,C,D,Mauvais
+4099200425870,Bio Ravioli,d,a,False,37,Médiocre,19.16951497,2.0,243.0,kcal,243.0,7.0,0.3,2.9,,19.16951497,0,0,2,0,2,C,D,Mauvais
+3052420400660,Ravioles à la viande,d,c,False,37,Médiocre,0.0,1.0,248.0,kcal,248.0,4.7,0.6,10.0,,,0,0,0,2,2,C,D,Mauvais
+8001665128247,Gourmet Girasoli Ricotta Mit Mascarpone & Zartem Blattspinat,d,c,False,35,Médiocre,10.0,3.3,1042.0,kJ,248.0,5.8,0.56,9.0,3.6,10.0,0,0,0,0,0,A,B,Médiocre
+3266140051679,Ravioles du Dauphiné,d,c,False,32,Médiocre,0.0,1.5,284.0,kcal,284.0,8.1,0.6,12.9,,0.0,0,0,0,0,0,A,C,Médiocre
+3439496620084,Perline bœuf et jambon cru,d,e,False,8,Mauvais,0.0,0.9,254.0,kcal,254.0,2.7,0.64,15.0,,,1,1,1,0,3,C,E,Mauvais
+20579067,Siao long pao,d,c,False,8,Mauvais,19.0,1.4,187.0,kcal,187.0,2.4,0.76,7.1,,19.0,1,1,2,3,7,C,E,Mauvais
+8852018101147,Grilled Chicken Flavour,e,c,False,0,Mauvais,0.01181992,2.75,337.0,kcal,337.0,7.5,1.19,4.58,1.58,0.01181992,3,1,2,4,10,D,E,Mauvais
+8801073115088,quattro cheese hot chicken flavor ramen,e,b,False,0,Mauvais,0.0,7.59,590.0,kcal,590.0,9.0,1.32,11.0,1.38,0.0,2,0,3,7,12,E,E,Mauvais
+3038359005800,Lustucru banzaï noodle nouilles sautées en sauce poulet teriyaki 90g,e,b,False,30,Mediocre,5.849776786,3.4,1031.0,kJ,246.0,4.9,0.36,5.0,1.5,5.849776786,1,0,3,1,5,C,E,Mauvais
+6935270641650,Artificial Roasted Beef Flavour Instant Noodles,e,b,False,0,Mauvais,0.0,4.2,414.0,kcal,414.0,7.5,3.28,11.0,3.0,0.0,6,1,4,4,15,E,E,Mauvais
+850016318541,Roasted “Pork” Tonkotsu Ramen Soup,e,d,False,12,Mauvais,0.002943485,1.69,300.0,kcal,300.0,8.0,1.51,30.5,16.9,0.002943485,0,0,3,3,6,C,E,Mauvais
+9300777092347,Fried noodles,e,c,False,0,Mauvais,0.0,12.0,500.8,kcal,500.8,6.4,0.852,5.6,,0.0,1,0,1,1,3,C,E,Mauvais
+8720812770633,Hot Spicy Ramen Noodles Speedy Spicy,e,d,False,0,Mauvais,5.080871582,8.23,1789.0,kJ,428.0,8.89,1.132,7.4,,5.080871582,4,2,1,3,10,E,E,Mauvais
+4088600270463,Snack noodles,e,c,False,36,Mediocre,1.821550642,3.9,422.0,kJ,101.0,1.9,0.172,2.2,0.8,1.821550642,1,0,3,3,7,C,E,Mauvais
+4770107252812,Nouilles sun yan beef,e,c,False,33,Mediocre,0.0,1.0,92.0,kcal,92.0,2.0,0.388,2.0,0.9,0.0,2,0,4,2,8,C,E,Mauvais
+6223006710849,Nouilles extra piquante,e,b,False,0,Mauvais,,3.3,460.0,kcal,460.0,8.6,1.647,10.0,2.8,,0,0,0,0,0,C,D,Mauvais
+4978065013449,播州の糸 そば,e,unknown,,30,Mediocre,0.0,63.0,355.0,kcal,355.0,0.5,0.88,14.0,3.700000048,0.0,0,0,0,0,0,C,B,Mauvais
+8801073211216,Samyang 2X Spicy Bowl,e,unknown,,0,Mauvais,0.0,5.714285714,1694.0,kJ,409.5238095,6.666666667,0.914285714,8.571428571,2.857142857,0.0,5,0,4,4,13,E,E,Mauvais
+8801073142312,Buldak Spicy Chicken Carbonara,e,unknown,,0,Mauvais,0.0,3.85,560.0,kcal,560.0,9.997,1.02,6.92,2.31,0.0,0,0,5,3,8,C,E,Mauvais
+8712857980962,Noocyicious,e,unknown,,0,Mauvais,0.0,0.98,510.42,kcal,510.42,8.05,1.396,11.38,1.8,,1,0,4,3,8,C,E,Mauvais
+8720812770671,Hot Spicy ramen noodles,e,unknown,,0,Mauvais,2.48128628754785e-10,8.35,1672.0,kJ,400.0,7.69,1.048,7.09,,2.48e-10,2,1,3,4,10,C,E,Mauvais
+6920802305841,Soba Noodles,e,unknown,,69,Bon,0.0,1.4,1489.0,kJ,356.0,0.4,0.4,17.0,,0.0,0,0,0,0,0,A,B,Mauvais
+9555022301877,Mamee Monster BBQ Flavour Snack Noodles,e,unknown,,0,Mauvais,5.68181818181818,3.6,473.0,kJ,113.0,2.0,1.29,11.2,,5.681818182,3,0,3,2,8,C,E,Mauvais
+8680908020021,Noodle,e,unknown,,0,Mauvais,0.0,4.0,467.0,kcal,467.0,8.0,1.6,10.0,,,2,0,3,2,7,C,E,Mauvais
+6909146706897,Nouille Sec Kailo,e,unknown,,24,Mauvais,0.0,1.5,2001.0,kJ,477.0,8.9,0.7,10.8,,0.0,0,0,1,1,2,C,D,Mauvais
+8697686705057,Noodle,e,unknown,,0,Mauvais,0.0,4.0,467.0,kcal,467.0,8.0,1.6,10.0,,,2,0,2,2,6,C,E,Mauvais
+8901058898422,Maggi Special Masala,e,unknown,,0,Mauvais,0.0,2.3,1645.0,kJ,393.0,7.7,0.9393,9.6,2.3,0.0,1,0,3,3,7,C,E,Mauvais
+4061464332935,Instant-Nudeln,e,unknown,,0,Mauvais,0.0,29.0,461.0,kcal,461.0,12.0,2.92,13.0,0.0,,5,1,2,1,9,E,E,Mauvais
+8901058847000,Noodles,e,unknown,,0,Mauvais,0.0,1.8,396.0,kcal,396.0,9.9,104.16,8.0,2.0,0.0,1,0,3,0,4,C,E,Mauvais
+4061464321007,Asia Instand Nudeln Schwein,e,unknown,,0,Mauvais,0.0,3.0,468.0,kcal,468.0,13.0,2.8,13.0,,0.0,3,0,1,0,4,D,E,Mauvais
+8901014000012,Top Ramen Masala Noodles,e,unknown,,0,Mauvais,0.0,2.21,1927.0,kJ,460.32,8.12,2.004,8.88,,,1,0,3,1,5,C,E,Mauvais
+8717163788240,Knorr Repas Express Grand Pasta Pot Carbonara 92g,e,unknown,,31,Mediocre,0.7,4.7,1852.0,kJ,444.0,11.0,1.2,12.0,2.2,0.7,1,0,1,1,3,C,E,Mauvais
+8801073140622,Potato Ramen,e,unknown,,0,Mauvais,0.0,3.33,520.0,kcal,520.0,9.0,1.65,10.0,0.833,0.0,2,0,3,5,10,E,E,Mauvais
+8801073110168,Samyang Lamen Assorted Vegetable,e,unknown,,0,Mauvais,0.0,3.0,475.0,kcal,475.0,8.0,0.724,9.0,0.0,0.0,2,0,5,3,10,E,E,Mauvais
+8801073211506,Carbonara Buldak Spicy Chicken Flavor Ramen,e,unknown,,0,Mauvais,0.0,8.57,1966.0,kJ,470.0,11.0,1.13,6.67,0.952,0.0,1,0,5,3,9,E,E,Mauvais
+8801073114814,Buldak Cream Carbonara Hot Chicken Flavor Ramen,e,unknown,,0,Mauvais,4.31069306472409e-06,7.86,550.0,kcal,550.0,11.004,1.17,7.86,,4.31069e-06,1,0,4,6,11,E,E,Mauvais
+5901384506629,Yakisoba saveur Poulet pad thaï,unknown,e,,7,Mauvais,7.0171875,2.900000095,236.0,kcal,236.0,5.099999905,0.56,4.599999905,1.0,7.0171875,1,0,3,2,6,C,E,Mauvais
